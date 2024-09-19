@@ -14,6 +14,7 @@ jobs:
        run: echo "Hello world"
   secondJob:
    runs-on: "ubuntu-latest"
+   needs: [firsJob]
    steps:
      - name: "Create file"
        run: "touch index.txt"
