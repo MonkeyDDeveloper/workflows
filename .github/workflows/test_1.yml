@@ -6,3 +6,12 @@ jobs:
    steps:
      - name: "Say hello"
        run: echo "Hello world"
+  secondJob:
+   runs-on: "ubuntu-latest"
+   steps:
+     - name: "Create file"
+       run: "touch index.txt"
+     - name: "Write in file"
+       run: "echo 'Hello world' >> index.txt"
+     - name: "Read file"
+       run: "cat index.txt" 
