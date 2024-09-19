@@ -1,5 +1,11 @@
 name: "Mi firs workflow"
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 jobs:
   firsJob:
    runs-on: "ubuntu-latest"
