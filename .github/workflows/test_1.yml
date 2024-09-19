@@ -12,6 +12,10 @@ jobs:
    steps:
      - name: "Say hello"
        run: echo "Hello world"
+     - name: Checkout
+       uses: actions/checkout@v4.1.7
+     - name: "list files"
+       run: ls
   secondJob:
    runs-on: "ubuntu-latest"
    needs: [firsJob]
