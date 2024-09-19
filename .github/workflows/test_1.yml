@@ -1,0 +1,8 @@
+name: "Mi firs workflow"
+on: [push]
+jobs:
+  firsJob:
+   runs-on: "ubuntu-latest"
+   steps:
+     - name: "Say hello"
+       run: echo "Hello world"
