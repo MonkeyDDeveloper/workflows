@@ -5,3 +5,5 @@ source ~/.bashrc
 source ~/.nvm/nvm.sh
 
 nvm install node
+
+nvm use node
