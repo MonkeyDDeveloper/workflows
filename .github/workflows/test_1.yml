@@ -12,10 +12,15 @@ jobs:
    steps:
     - name: Checkout
       uses: actions/checkout@v4.1.7
-    - name: Install nvm and node latest version
+    - name: Install nvm
+      run: |
+        chmod +x ./nvm/install.sh
+        ./nvm/install.sh
+        echo "Instalación de nvm terminada"
+    - name: Instalar ultima versión de node
       run: |
         chmod +x ./script.sh
         ./script.sh
-        echo "Node version"
-        node --version
+    - name: Testear versión de node
+      run: node --version
             
