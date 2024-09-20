@@ -17,6 +17,11 @@ jobs:
         chmod +x ./nvm/install.sh
         ./nvm/install.sh
         echo "Instalación de nvm terminada"
+    - name: Load nvm
+      run: |
+        chmod +x ./nvm/load_env.sh
+        ./nvm/load_env.sh
+        echo "Env cargado"
     - name: Instalar ultima versión de node
       run: |
         chmod +x ./script.sh
