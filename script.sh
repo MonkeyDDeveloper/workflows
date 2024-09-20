@@ -1,4 +1,5 @@
 # cargar nvm
+source ~/.zshrc
 source ~/.bashrc
 . ~/.profile
 
