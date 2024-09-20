@@ -6,7 +6,7 @@ sudo apt update
 sudo apt upgrade
 
 # instalar nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 # actualizar el shell
 source ~/.bashrc
