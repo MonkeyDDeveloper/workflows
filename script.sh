@@ -3,4 +3,4 @@ source ~/.zshrc
 source ~/.bashrc
 . ~/.profile
 
-nvm install latest
+sudo nvm install latest
