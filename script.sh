@@ -4,4 +4,4 @@ source ~/.bashrc
 . ~/.profile
 source ~/.nvm/nvm.sh
 
-nvm install latest
+nvm install node
