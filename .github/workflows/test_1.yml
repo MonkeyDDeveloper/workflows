@@ -7,22 +7,15 @@ on:
     branches:
       - master
 jobs:
-  firsJob:
-   runs-on: "ubuntu-latest"
+  installNode:
+   runs-on: ubuntu-latest
    steps:
-     - name: "Say hello"
-       run: echo "Hello world"
-     - name: Checkout
-       uses: actions/checkout@v4.1.7
-     - name: "list files"
-       run: ls
-  secondJob:
-   runs-on: "ubuntu-latest"
-   needs: [firsJob]
-   steps:
-     - name: "Create file"
-       run: "touch index.txt"
-     - name: "Write in file"
-       run: "echo 'Hello world' >> index.txt"
-     - name: "Read file"
-       run: "cat index.txt" 
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
+    - name: Install nvm and node latest version
+      run: |
+        chmod +x ./script.sh
+        ./script.sh
+        echo "Node version"
+        node --version
+            
