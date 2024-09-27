@@ -23,6 +23,8 @@ jobs:
         ./script.sh
     - name: Testear versión de node
       run: |
+        source ~/.nvm/nvm.sh
+        nvm use node
         chmod +x ./echo_node_version.sh
         ./echo_node_version.sh
             
