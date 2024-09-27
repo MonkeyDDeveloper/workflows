@@ -21,9 +21,8 @@ jobs:
       run: |
         chmod +x ./script.sh
         ./script.sh
-        source ~/.bashrc
-        source ~/.nvm/nvm.sh
     - name: Testear versión de node
       run: |
-        node --version
+        chmod +x ./echo_node_version.sh
+        ./echo_node_version.sh
             
