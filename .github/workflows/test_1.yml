@@ -22,5 +22,7 @@ jobs:
         chmod +x ./script.sh
         ./script.sh
     - name: Testear versión de node
-      run: node --version
+      run: |
+        nvm use node
+        node --version
             
