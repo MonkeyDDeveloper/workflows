@@ -7,24 +7,37 @@ on:
     branches:
       - master
 jobs:
-  installNode:
-   runs-on: ubuntu-latest
-   steps:
-    - name: Checkout
-      uses: actions/checkout@v4.1.7
-    - name: Install nvm
-      run: |
-        chmod +x ./nvm/install.sh
-        ./nvm/install.sh
-        echo "Instalación de nvm terminada"
-    - name: Instalar ultima versión de node
-      run: |
-        chmod +x ./script.sh
-        ./script.sh
-    - name: Testear versión de node
-      run: |
-        source ~/.nvm/nvm.sh
-        nvm use node
-        chmod +x ./echo_node_version.sh
-        ./echo_node_version.sh
+  # installNode:
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v4.1.7
+  #   - name: Install nvm
+  #     run: |
+  #       chmod +x ./nvm/install.sh
+  #       ./nvm/install.sh
+  #       echo "Instalación de nvm terminada"
+  #   - name: Instalar ultima versión de node
+  #     run: |
+  #       chmod +x ./script.sh
+  #       ./script.sh
+  #   - name: Testear versión de node
+  #     run: |
+  #       source ~/.nvm/nvm.sh
+  #       nvm use node
+  #       chmod +x ./echo_node_version.sh
+  #       ./echo_node_version.sh
+  installNodeWithActions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Go to repository
+        uses: actions/checkout@v4.1.7
+      - name: Check path
+        run: ls
+      - name: Install node
+        uses: actions/setup-node@v4.0.4
+        with:
+          node-version: latest
+      - name: Check node version
+        run: node --version
             
