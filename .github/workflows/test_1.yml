@@ -40,4 +40,9 @@ jobs:
           node-version: latest
       - name: Check node version
         run: node --version
+  testMyAction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test my action
+        uses: ./.github/actions/say-hello
             

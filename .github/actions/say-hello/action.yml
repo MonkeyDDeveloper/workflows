@@ -1,0 +1,9 @@
+name: say hello
+description: test my new action
+
+runs:
+  using: composite
+  steps:
+   - name: echo hello world
+     run: echo "hello world from action"
+     shell: bash
