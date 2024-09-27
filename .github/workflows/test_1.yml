@@ -43,6 +43,8 @@ jobs:
   testMyAction:
     runs-on: ubuntu-latest
     steps:
+      - name: navigate to my folder
+        uses: actions/checkout@v4.1.7
       - name: test my action
         uses: ./.github/actions/say-hello
             
