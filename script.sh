@@ -1,5 +1,5 @@
 # cargar nvm
-source ~/.nvm/nvm.sh
+# source ~/.nvm/nvm.sh
 
 nvm install node
 
