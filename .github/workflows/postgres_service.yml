@@ -18,4 +18,5 @@ jobs:
 
     steps:
       - name: Connect to db
-        run: psql --help
+        run: |
+          psql -h localhost -p 5432 -U postgres -d prueba
