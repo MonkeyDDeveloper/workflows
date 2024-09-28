@@ -23,7 +23,7 @@ jobs:
         uses: akanieski/setup-postgres-cli@v0.1.2
         with:
           password: 1234
-          command: psql -h 127.0.0.1 -p 5432 -U postgres -d prueba -c "SELECT 1;"
+          commands: psql -h 127.0.0.1 -p 5432 -U postgres -d prueba -c "SELECT 1;"
       - name: Connect to db
         run: |
           psql -h 127.0.0.1 -p 5432 -U postgres -d prueba
