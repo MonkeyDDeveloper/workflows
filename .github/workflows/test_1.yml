@@ -27,19 +27,19 @@ jobs:
   #       nvm use node
   #       chmod +x ./echo_node_version.sh
   #       ./echo_node_version.sh
-  installNodeWithActions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Go to repository
-        uses: actions/checkout@v4.1.7
-      - name: Check path
-        run: ls
-      - name: Install node
-        uses: actions/setup-node@v4.0.4
-        with:
-          node-version: latest
-      - name: Check node version
-        run: node --version
+  # installNodeWithActions:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Go to repository
+  #       uses: actions/checkout@v4.1.7
+  #     - name: Check path
+  #       run: ls
+  #     - name: Install node
+  #       uses: actions/setup-node@v4.0.4
+  #       with:
+  #         node-version: latest
+  #     - name: Check node version
+  #       run: node --version
   testMyAction:
     runs-on: ubuntu-latest
     steps:

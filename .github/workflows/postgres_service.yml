@@ -1,0 +1,21 @@
+name: installing postgres and use one query
+on:
+  push:
+   branches:
+     - master
+jobs:
+  installingPostgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: 1234
+          POSTGRES_DB: prueba
+
+    steps:
+      - name: Connect to db
+        run: psql --help
