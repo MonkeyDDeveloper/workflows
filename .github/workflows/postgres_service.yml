@@ -16,7 +16,11 @@ jobs:
           POSTGRES_PASSWORD: 1234
           POSTGRES_DB: prueba
 
-    steps:
+    steps:                
+      - name: Setup Postgres CLI
+        uses: akanieski/setup-postgres-cli@v0.1.2
+        with:
+          password: 1234
       - name: Connect to db
         run: |
           psql -h localhost -p 5432 -U postgres -d prueba
