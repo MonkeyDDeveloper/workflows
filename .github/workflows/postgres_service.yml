@@ -30,6 +30,8 @@ jobs:
             echo "Waiting for PostgreSQL to be healthy..."
             sleep 5
           done
+      - name: show docker processes
+        run: docker ps
       - name: Setup Postgres CLI
         uses: akanieski/setup-postgres-cli@v0.1.2
         with:
