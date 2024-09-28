@@ -47,4 +47,6 @@ jobs:
         uses: actions/checkout@v4.1.7
       - name: test my action
         uses: ./.github/actions/say-hello
+        with:
+          message: Javier
             

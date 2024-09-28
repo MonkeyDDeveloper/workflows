@@ -1,9 +1,14 @@
 name: say hello
 description: test my new action
 
+inputs:
+  message:
+    description: the message you wanna display in echo
+    required: true
+
 runs:
   using: composite
   steps:
    - name: echo hello world
-     run: echo "hello world from action"
+     run: echo "hello world from action ${{ inputs.message }}"
      shell: bash
