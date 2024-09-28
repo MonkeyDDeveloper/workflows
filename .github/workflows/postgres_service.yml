@@ -24,6 +24,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Wait for PostgreSQL to be healthy
+        run: |
+          until [ "`docker inspect -f {{.State.Health.Status}} $(docker-compose ps -q postgres)`" == "healthy" ]; do
+            echo "Waiting for PostgreSQL to be healthy..."
+            sleep 5
+          done
       - name: Setup Postgres CLI
         uses: akanieski/setup-postgres-cli@v0.1.2
         with:
