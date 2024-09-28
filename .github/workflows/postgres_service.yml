@@ -15,6 +15,11 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: 1234
           POSTGRES_DB: prueba
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
       - name: Checkout code
@@ -23,7 +28,4 @@ jobs:
         uses: akanieski/setup-postgres-cli@v0.1.2
         with:
           password: 1234
-          commands: psql -h 127.0.0.1 -p 5432 -U postgres -d prueba -c "SELECT 1;"
-      - name: Connect to db
-        run: |
-          psql -h 127.0.0.1 -p 5432 -U postgres -d prueba
+          commands: psql -h localhost -p 5432 -U postgres -d prueba -c "SELECT 1;"
