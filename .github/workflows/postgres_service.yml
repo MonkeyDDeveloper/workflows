@@ -16,11 +16,14 @@ jobs:
           POSTGRES_PASSWORD: 1234
           POSTGRES_DB: prueba
 
-    steps:                
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Setup Postgres CLI
         uses: akanieski/setup-postgres-cli@v0.1.2
         with:
           password: 1234
+          command: psql -h 127.0.0.1 -p 5432 -U postgres -d prueba -c "SELECT 1;"
       - name: Connect to db
         run: |
-          psql -h localhost -p 5432 -U postgres -d prueba
+          psql -h 127.0.0.1 -p 5432 -U postgres -d prueba
