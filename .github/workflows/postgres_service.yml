@@ -29,7 +29,7 @@ jobs:
       - name: Setup Postgres CLI
         env:
           PGPASSWORD: 1234
-          # POSTGRES_PASSWORD: 1234
-          # PG_PASSWORD: 1234
         run: | 
-          psql -h localhost -p 5432 -U postgres -d prueba -c "SELECT 1;"
+          psql -h localhost -p 5432 -U postgres -d prueba -f ./create_table.sql
+          psql -h localhost -p 5432 -U postgres -d prueba -f ./fill_table.sql
+          psql -h localhost -p 5432 -U postgres -d prueba -c "SELECT * FROM tbl_usuarios;"

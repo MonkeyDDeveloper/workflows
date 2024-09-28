@@ -1,0 +1,1 @@
+INSERT INTO tbl_usuarios(name) VALUES ("Juan Javier");
