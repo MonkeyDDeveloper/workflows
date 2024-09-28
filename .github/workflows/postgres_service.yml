@@ -28,7 +28,7 @@ jobs:
         run: docker ps
       - name: Setup Postgres CLI
         env:
-          PGPASSWORD: 1234
+          PGPASSWORD: ${{ secrets.MY_SECRET }}
         run: | 
           psql -h localhost -p 5432 -U postgres -d prueba -f ./create_table.sql
           psql -h localhost -p 5432 -U postgres -d prueba -f ./fill_table.sql
