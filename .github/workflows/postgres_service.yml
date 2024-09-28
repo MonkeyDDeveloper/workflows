@@ -33,9 +33,9 @@ jobs:
       - name: show docker processes
         run: docker ps
       - name: Setup Postgres CLI
-        env:
-          PGPASSWORD: 1234
-          POSTGRES_PASSWORD: 1234
-          PG_PASSWORD: 1234
+        # env:
+          # PGPASSWORD: 1234
+          # POSTGRES_PASSWORD: 1234
+          # PG_PASSWORD: 1234
         run: | 
           psql -h localhost -p 5432 -U postgres -d prueba -c "SELECT 1;"
