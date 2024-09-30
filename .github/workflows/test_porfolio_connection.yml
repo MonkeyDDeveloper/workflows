@@ -18,4 +18,4 @@ jobs:
         chmod 600 ~/.ssh/id_rsa.pub
     - name: test connection
       run: |
-        ssh -i ~/.ssh/id_rsa.pub "root@${{ vars.PORTFOLIO_IP }}" "echo 'Connection successful from github actions' >> ~/github_actions/test.txt"
+        ssh "root@${{ vars.PORTFOLIO_IP }}" -i ~/.ssh/id_rsa.pub "echo 'Connection successful from github actions' >> ~/github_actions/test.txt"
