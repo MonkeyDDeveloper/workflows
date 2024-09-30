@@ -1,0 +1,19 @@
+name: connect to my portfolio server
+on:
+  push:
+    branches:
+      - master
+jobs:
+  testConnection:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.7
+    - name: configura id_rsa
+      run: |
+        echo "${{ vars.PORTFOLIO_SSH_KEY }}" >> ~/.ssh/id_rsa.pub
+        ssh-keyscan -H "${{ vars.PORTFOLIO_IP }}" >> ~/.ssh/known_hosts
+        chmod 600 ~/.ssh/id_rsa.pub
+    - name: test connection
+      run: |
+        ssh -i ~/.ssh/id_rsa.pub "root@${{ vars.PORTFOLIO_IP }}" "echo 'Connection successful from github actions' >> ~/github_actions/test.txt"
