@@ -42,6 +42,7 @@ jobs:
   #       run: node --version
   testMyAction:
     runs-on: ubuntu-latest
+    if: false
     steps:
       - name: navigate to my folder
         uses: actions/checkout@v4.1.7

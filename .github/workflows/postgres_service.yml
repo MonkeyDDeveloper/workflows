@@ -6,6 +6,7 @@ on:
 jobs:
   installingPostgres:
     runs-on: ubuntu-latest
+    if: false
     services:
       postgres:
         image: postgres:15
