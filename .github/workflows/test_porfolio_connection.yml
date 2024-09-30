@@ -11,6 +11,7 @@ jobs:
       uses: actions/checkout@v4.1.7
     - name: configura id_rsa
       run: |
+        echo "creating ssh directory"
         mkdir -p ~/.ssh/
         echo "${{ vars.PORTFOLIO_SSH_KEY }}" >> ~/.ssh/id_rsa
         ssh-keyscan -H "${{ vars.PORTFOLIO_IP }}" >> ~/.ssh/known_hosts
