@@ -1,0 +1,10 @@
+name: "porfolio"
+services:
+  front-dev:
+    build:
+      context: ./front/portfolio
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front/portfolio:/app
