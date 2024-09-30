@@ -13,9 +13,9 @@ jobs:
       run: |
         echo "creating ssh directory"
         mkdir -p ~/.ssh/
-        echo "${{ vars.PORTFOLIO_SSH_KEY }}" >> ~/.ssh/id_rsa
-        ssh-keyscan -H "${{ vars.PORTFOLIO_IP }}" >> ~/.ssh/known_hosts
+        echo "${{ secrets.PORTFOLIO_SSH_KEY }}" >> ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H "${{ secrets.PORTFOLIO_IP }}" >> ~/.ssh/known_hosts
     - name: test connection
       run: |
-        ssh "root@${{ vars.PORTFOLIO_IP }}" -i ~/.ssh/id_rsa "echo 'Connection successful from github actions' >> ~/github_actions/test.txt"
+        ssh "root@${{ secrets.PORTFOLIO_IP }}" -i ~/.ssh/id_rsa "echo 'Connection successful from github actions' >> ~/github_actions/test.txt"
