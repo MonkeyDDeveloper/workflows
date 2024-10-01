@@ -9,6 +9,8 @@ services:
     volumes:
       - ./front/portfolio:/app
   back:
+    depends_on:
+      - postgres
     build:
       context: ./back/PortfolioBackend
       dockerfile: PortfolioBackend/Dockerfile
@@ -17,3 +19,14 @@ services:
     ports:
       - 55001:8080
       - 55002:8081
+  postgres:
+    image: postgres:latest
+    env_file:
+      - ./.env        
+    ports:
+      - 6543:5432                          
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
