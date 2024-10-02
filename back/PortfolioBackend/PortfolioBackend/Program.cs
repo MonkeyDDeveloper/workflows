@@ -1,15 +1,20 @@
 using DotNetEnv;
+using Microsoft.EntityFrameworkCore;
+using PortfolioBackend.Context;
 Env.Load();
 
-var testingVar = Environment.GetEnvironmentVariable("MY_FIRST_ENV_VARIABLE");
-
-if(testingVar != null)
-{
-    Console.WriteLine(testingVar);
-}
-
+var envDbConnectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+var dbConnectionString = envDbConnectionString;
 var builder = WebApplication.CreateBuilder(args);
 
+// Configuring context
+if(dbConnectionString == null)
+{
+    Console.WriteLine("No se ha ingresado ningún string de conexión a base de datos");
+    return;
+}
+
+builder.Services.AddDbContext<PortfolioDbContext>(options => options.UseNpgsql(dbConnectionString));
 // Add services to the container.
 
 builder.Services.AddControllers();
