@@ -1,19 +1,27 @@
-﻿namespace PortfolioBackend.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace PortfolioBackend.Models
 {
     public class ProfessionalExperience
     {
+        [Key]
+        [Column("id")]
         public int Id { get; set; }
+        [Column("title")]
         public required string Title { get; set; }
-
+        [Column("description")]
         public required string Description { get; set; }
-
+        [Column("start_date")]
         public required DateOnly StartDate { get; set; }
+        [Column("end_date")]
+        public required DateOnly EndDate { get; set; }
 
-        public required DateOnly EndDateOnly { get; set; }
+        [NotMapped]
+        public ICollection<Responsabilitie> Responsabilities { get; set; } = null!;
 
-        public required List<string> Responsabilities { get; set; }
-
-        public required List<string> Tecnologies { get; set; }
+        [NotMapped]
+        public ICollection<TechnologieExperience> TechnologieExperiences { get; set; } = null!;
 
     }
 }
