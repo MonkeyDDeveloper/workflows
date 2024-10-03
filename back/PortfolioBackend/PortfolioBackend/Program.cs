@@ -1,6 +1,7 @@
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 using PortfolioBackend.Context;
+using PortfolioBackend.Models;
 Env.Load();
 
 var envDbConnectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
