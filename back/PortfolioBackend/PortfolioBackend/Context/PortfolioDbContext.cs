@@ -43,7 +43,10 @@ namespace PortfolioBackend.Context
                 .HasMany(pe => pe.TechnologieExperiences);
 
             builder.Entity<ProfessionalExperience>()
-                .HasMany(pe => pe.Responsabilities);
+                .HasMany(pe => pe.Responsabilities)
+                .WithOne(re => re.ProfessionalExperience)
+                .HasForeignKey(re => re.ExperienceId)
+                .HasPrincipalKey(pe => pe.Id);
 
             builder.Entity<ProfessionalExperience>()
                 .ToTable("professional_experiences");
