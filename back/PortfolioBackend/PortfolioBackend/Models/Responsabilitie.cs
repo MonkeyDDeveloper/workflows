@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace PortfolioBackend.Models
 {
@@ -16,6 +17,7 @@ namespace PortfolioBackend.Models
 
         public required string Description { get; set; }
 
+        [JsonIgnore]
         public ProfessionalExperience ProfessionalExperience { get; set; } = null!;
 
     }

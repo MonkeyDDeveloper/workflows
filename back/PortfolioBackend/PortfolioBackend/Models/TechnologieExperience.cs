@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace PortfolioBackend.Models
 {
@@ -16,7 +17,9 @@ namespace PortfolioBackend.Models
         [Column("experience_id")]
         public int ExperienceId { get; set; }
 
+
         [NotMapped]
+        [JsonIgnore]
         public ProfessionalExperience ProfessionalExperience { get; set; } = null!;
 
         [NotMapped]
