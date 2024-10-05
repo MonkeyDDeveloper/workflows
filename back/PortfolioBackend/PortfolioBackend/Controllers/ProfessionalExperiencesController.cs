@@ -45,81 +45,81 @@ namespace PortfolioBackend.Controllers
         }
 
         // GET: api/ProfessionalExperiences/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ProfessionalExperience>> GetProfessionalExperience(int id)
-        {
-            var professionalExperience = await _context.ProfessionalExperiences.FindAsync(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<ProfessionalExperience>> GetProfessionalExperience(int id)
+        //{
+        //    var professionalExperience = await _context.ProfessionalExperiences.FindAsync(id);
 
-            if (professionalExperience == null)
-            {
-                return NotFound();
-            }
+        //    if (professionalExperience == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return professionalExperience;
-        }
+        //    return professionalExperience;
+        //}
 
-        // PUT: api/ProfessionalExperiences/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutProfessionalExperience(int id, ProfessionalExperience professionalExperience)
-        {
-            if (id != professionalExperience.Id)
-            {
-                return BadRequest();
-            }
+        //// PUT: api/ProfessionalExperiences/5
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutProfessionalExperience(int id, ProfessionalExperience professionalExperience)
+        //{
+        //    if (id != professionalExperience.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(professionalExperience).State = EntityState.Modified;
+        //    _context.Entry(professionalExperience).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProfessionalExperienceExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!ProfessionalExperienceExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        // POST: api/ProfessionalExperiences
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<ProfessionalExperience>> PostProfessionalExperience(ProfessionalExperience professionalExperience)
-        {
-            _context.ProfessionalExperiences.Add(professionalExperience);
-            await _context.SaveChangesAsync();
+        //// POST: api/ProfessionalExperiences
+        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //[HttpPost]
+        //public async Task<ActionResult<ProfessionalExperience>> PostProfessionalExperience(ProfessionalExperience professionalExperience)
+        //{
+        //    _context.ProfessionalExperiences.Add(professionalExperience);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProfessionalExperience", new { id = professionalExperience.Id }, professionalExperience);
-        }
+        //    return CreatedAtAction("GetProfessionalExperience", new { id = professionalExperience.Id }, professionalExperience);
+        //}
 
-        // DELETE: api/ProfessionalExperiences/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProfessionalExperience(int id)
-        {
-            var professionalExperience = await _context.ProfessionalExperiences.FindAsync(id);
-            if (professionalExperience == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/ProfessionalExperiences/5
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> DeleteProfessionalExperience(int id)
+        //{
+        //    var professionalExperience = await _context.ProfessionalExperiences.FindAsync(id);
+        //    if (professionalExperience == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.ProfessionalExperiences.Remove(professionalExperience);
-            await _context.SaveChangesAsync();
+        //    _context.ProfessionalExperiences.Remove(professionalExperience);
+        //    await _context.SaveChangesAsync();
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
-        private bool ProfessionalExperienceExists(int id)
-        {
-            return _context.ProfessionalExperiences.Any(e => e.Id == id);
-        }
+        //private bool ProfessionalExperienceExists(int id)
+        //{
+        //    return _context.ProfessionalExperiences.Any(e => e.Id == id);
+        //}
     }
 }
 
