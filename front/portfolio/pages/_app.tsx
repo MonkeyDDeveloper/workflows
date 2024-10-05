@@ -3,6 +3,7 @@ import Layout from '../layouts/default';
 import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
 import { NextIntlClientProvider } from 'next-intl';
+import { NextUIProvider } from "@nextui-org/react";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
     const router = useRouter();
@@ -12,9 +13,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             timeZone="America/Guayaquil"
             messages={pageProps.messages}
         >
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <NextUIProvider>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </NextUIProvider>
         </NextIntlClientProvider>
     );
 };
