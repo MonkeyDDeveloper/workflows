@@ -1,5 +1,4 @@
 name: 'Automatic Deploy'
-description: 'Automatically deploy to portfolio server'
 on:
   push:
     branches:
