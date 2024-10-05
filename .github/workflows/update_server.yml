@@ -1,0 +1,30 @@
+name: 'Automatic Deploy'
+description: 'Automatically deploy to portfolio server'
+on:
+  push:
+    branches:
+      - feature/set-up-containers
+jobs:
+  testProject:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4.1.7
+      - name: set env variables
+        run: |
+          echo ${{ vars.POSTGRES_USER }} >> .env
+          echo ${{ vars.POSTGRES_PASSWORD }} >> .env
+          echo ${{ vars.POSTGRES_DB }} >> .env
+          echo ${{ vars.DB_CONNECTION_STRING }} >> .env
+          echo ${{ vars.BACK_API_URI }} >> .env
+      - name: check .env file
+        run: cat .env
+      - name: install docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+          sudo systemctl start docker
+          sudo systemctl enable docker
+      - name: build and run docker
+        run: |
+          docker compose up -d
