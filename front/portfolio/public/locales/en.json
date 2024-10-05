@@ -1,0 +1,14 @@
+{
+    "navigation": {
+        "index": "Home",
+        "experience": "Experience",
+        "projects": "Projects"
+    },
+    "index": {
+        "title": "Javier Fray En",
+        "bigHi": "Hi!"
+    },
+    "experience": {
+        "title": "Experience"
+    }
+}
