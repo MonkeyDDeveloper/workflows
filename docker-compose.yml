@@ -1,6 +1,8 @@
 name: "porfolio"
 services:
   front:
+    depends_on:
+      - back
     build:
       context: ./front/portfolio
       dockerfile: Dockerfile
