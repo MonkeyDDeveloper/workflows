@@ -1,17 +1,20 @@
 "use client"
 
-import Link from "next/link"
+// import Link from "next/link"
 import { cn } from "../../lib/utils/cn"
 import { useTranslations } from "next-intl"
 import { useRouter } from "next/router"
 import LanguageSwitcher from "./LaguageSwitcher"
 import DarkModeToggle from "./DarkModeToggle"
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button, Link } from "@nextui-org/react";
+import { useState } from "react"
+
 
 export default function Navigation() {
     const t = useTranslations()
-    // const cookieStore = useCookies()
     const router = useRouter()
     const pathname = router.pathname
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const navItems = [
         { name: t("navigation.index"), path: `/` },
@@ -20,38 +23,58 @@ export default function Navigation() {
     ]
 
     return (
-        <section className="mt-2 grid grid-cols-3 grid-rows-1 gap-4">
-            <section>
+        <Navbar onMenuOpenChange={setIsMenuOpen}>
+            <NavbarContent>
+                <NavbarMenuToggle
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                    className="sm:hidden"
+                />
+                <NavbarBrand>
+                    <span className="font-minecraft text-cyan-600 text-lg">
+                        <i>MonkeyDeveloper</i>
+                    </span>
+                </NavbarBrand>
+            </NavbarContent>
 
-            </section>
-            <nav className="flex justify-center items-center h-16 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 sticky top-0">
-                <ul className="flex space-x-4">
-                    {navItems.map((item) => (
-                        <li key={item.path}>
-                            <Link
-                                href={item.path}
-                                className={cn(
-                                    "relative px-3 py-2 transition-colors hover:text-cyan-600 hover:underline hover:underline-offset-4",
-                                    pathname === item.path ? "text-cyan-600 underline underline-offset-4" : "text-foreground/60"
-                                )}
-                            >
-                                <span className="text-lg">
+            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+                {navItems.map((item, index) => {
+                    return (
+                        <NavbarItem key={`${item}-${index}`}>
+                            <Link href={item.path}>
+                                <span className={`font-minecraft ${item.path == pathname ? 'text-cyan-600' : 'text-foreground'}`}>
                                     {item.name}
                                 </span>
                             </Link>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-            <section className="flex items-center justify-end">
-                <section className="mr-4">
+                        </NavbarItem>
+                    )
+                })}
+            </NavbarContent>
+            <NavbarContent className="hidden sm:flex gap-4" justify="end">
+                <NavbarItem>
                     <LanguageSwitcher />
-                </section>
-                <section>
+                </NavbarItem>
+                <NavbarItem>
                     <DarkModeToggle />
-                </section>
-            </section>
-        </section>
+                </NavbarItem>
+            </NavbarContent>
+            <NavbarMenu>
+                {navItems.map((item, index) => (
+                    <NavbarMenuItem key={`${item}-${index}`}>
+                        <Link href={item.path}>
+                            <span className={`font-minecraft w-full ${item.path == pathname ? 'text-cyan-600' : 'text-foreground'}`}>
+                                {item.name}
+                            </span>
+                        </Link>
+                    </NavbarMenuItem>
+                ))}
+                <NavbarItem className="mt-4">
+                    <LanguageSwitcher />
+                </NavbarItem>
+                <NavbarItem className="flex justify-end">
+                    <DarkModeToggle />
+                </NavbarItem>
+            </NavbarMenu>
+        </Navbar>
     )
 }
 
