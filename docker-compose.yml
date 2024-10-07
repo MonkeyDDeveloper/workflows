@@ -9,7 +9,7 @@ services:
     ports:
       - 3000:3000
     env_file:
-      - ./.env
+      - ./envfile
   back:
     depends_on:
       - postgres
@@ -17,14 +17,14 @@ services:
       context: ./back/PortfolioBackend
       dockerfile: PortfolioBackend/Dockerfile
     env_file:
-      - ./.env
+      - ./envfile
     ports:
       - 55001:8080
       - 55002:8081
   postgres:
     image: postgres:latest
     env_file:
-      - ./.env        
+      - ./envfile        
     ports:
       - 6543:5432                          
     volumes:
