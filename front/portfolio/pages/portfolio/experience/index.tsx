@@ -4,7 +4,7 @@ import { ProfessionalExperience } from "../../../models/ProfessionalExperience"
 import { useTranslations } from "next-intl"
 
 async function getExperiences() {
-    const { message, data } = await portofioApi.get<ProfessionalExperience>("http://localhost:55001/api/professional-experiences")
+    const { message, data } = await portofioApi.get<ProfessionalExperience>(`${process.env.NEXT_PUBLIC_BACK_API_URI}/professional-experiences`)
     console.log({ message, data })
 }
 
