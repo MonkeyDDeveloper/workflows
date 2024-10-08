@@ -3,6 +3,8 @@ services:
   front:
     depends_on:
       - back
+    env_file:
+      - ./envfile.env
     build:
       context: ./front/portfolio
       dockerfile: Dockerfile
