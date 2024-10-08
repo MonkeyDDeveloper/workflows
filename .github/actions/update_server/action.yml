@@ -9,5 +9,5 @@ runs:
   steps:
     - name: update project in server
       run: |
-        ssh "root@${{ inputs.PORTFOLIO_IP }}" -i ~/.ssh/id_rsa "sudo ./app/scripts/new_update_project.sh" 
+        ssh "root@${{ inputs.PORTFOLIO_IP }}" -i ~/.ssh/id_rsa "sudo ./app/scripts/new_update_project.sh"
       shell: bash
