@@ -17,5 +17,6 @@ runs:
         SSH_USER: root
         SSH_KEY: ${{ inputs.PORTFOLIO_SSH_KEY }}
         SCRIPT: |
-          sudo ./app/scripts/new_update_project.sh  
+          echo "hello" >> ~/test.txt
+          sudo ~/app/scripts/new_update_project.sh  
     
