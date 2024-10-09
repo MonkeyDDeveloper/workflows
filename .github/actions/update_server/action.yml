@@ -10,13 +10,22 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Update Server Through SSH
-      uses: invi5H/ssh-action@v1
+    # - name: Update Server Through SSH
+    #   uses: invi5H/ssh-action@v1
+    #   with:
+    #     SSH_HOST: ${{ inputs.PORTFOLIO_IP }}  
+    #     SSH_USER: root
+    #     SSH_KEY: ${{ inputs.PORTFOLIO_SSH_KEY }}
+    #     SCRIPT: |
+    #       echo "hello" >> ~/test.txt
+    #       sudo ~/app/scripts/new_update_project.sh
+    - name: Deploy to Digital Ocean droplet via SSH action
+      uses: appleboy/ssh-action@v0.1.3
       with:
-        SSH_HOST: ${{ inputs.PORTFOLIO_IP }}  
-        SSH_USER: root
-        SSH_KEY: ${{ inputs.PORTFOLIO_SSH_KEY }}
-        SCRIPT: |
+        host: ${{ inputs.PORTFOLIO_IP }}
+        username: root
+        key: ${{ inputs.PORTFOLIO_SSH_KEY }}
+        script: |                          
           echo "hello" >> ~/test.txt
-          sudo ~/app/scripts/new_update_project.sh  
+          sudo ~/app/scripts/new_update_project.sh
     
