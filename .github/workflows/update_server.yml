@@ -25,3 +25,6 @@ jobs:
       #     PORTFOLIO_IP: ${{ secrets.PORTFOLIO_IP }}
       - name: update project in server
         uses: ./.github/actions/update_server
+        with:
+          PORTFOLIO_SSH_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
+          PORTFOLIO_IP: ${{ secrets.PORTFOLIO_IP }}

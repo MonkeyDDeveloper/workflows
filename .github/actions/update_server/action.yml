@@ -1,14 +1,21 @@
 name: update project in server
-description: use invi-action to update project in server
+description: create repository or update project in server
+inputs:
+  PORTFOLIO_IP:
+    description: the ip address of the portfolio server
+    required: true
+  PORTFOLIO_SSH_KEY:
+    description: the ssh key of the portfolio server
+    required: true
 runs:
   using: composite
   steps:
     - name: Update Server Through SSH
       uses: invi5H/ssh-action@v1
       with:
-        SSH_HOST: ${{ secrets.PORTFOLIO_IP }}  
+        SSH_HOST: ${{ inputs.PORTFOLIO_IP }}  
         SSH_USER: root
-        SSH_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
+        SSH_KEY: ${{ inputs.PORTFOLIO_SSH_KEY }}
         SCRIPT: |
           sudo ./app/scripts/new_update_project.sh  
     
