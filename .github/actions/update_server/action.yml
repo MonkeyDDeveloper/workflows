@@ -1,22 +1,14 @@
 name: update project in server
-description: create repository or update project in server
-inputs:
-  PORTFOLIO_IP:
-    description: the ip address of the portfolio server
-    required: true
+description: use invi-action to update project in server
 runs:
   using: composite
   steps:
-    # - name: update project in server
-    #   run: |
-    #     ssh "root@${{ inputs.PORTFOLIO_IP }}" -i ~/.ssh/id_rsa "sudo ./app/scripts/new_update_project.sh"
-    #   shell: bash
-    - name: Deploy to Digital Ocean droplet via SSH action
-      uses: appleboy/ssh-action@v0.1.3
+    - name: Update Server Through SSH
+      uses: invi5H/ssh-action@v1
       with:
-        host: ${{ inputs.PORTFOLIO_IP }}
-        username: root
-        key: ~/.ssh/id_rsa
-        script: |                            
-          ./app/scripts/new_update_project.sh   
+        SSH_HOST: ${{ secrets.PORTFOLIO_IP }}  
+        SSH_USER: root
+        SSH_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
+        SCRIPT: |
+          sudo ./app/scripts/new_update_project.sh  
     

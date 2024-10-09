@@ -18,12 +18,10 @@ jobs:
           echo "BACK_API_URI=${{ vars.BACK_API_URI }}" >> .env
       - name: check .env file
         run: cat .env
-      - name: configure id rsa
-        uses: ./.github/actions/configure_id_rsa
-        with:
-          PORTFOLIO_SSH_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
-          PORTFOLIO_IP: ${{ secrets.PORTFOLIO_IP }}
+      # - name: configure id rsa
+      #   uses: ./.github/actions/configure_id_rsa
+      #   with:
+      #     PORTFOLIO_SSH_KEY: ${{ secrets.PORTFOLIO_SSH_KEY }}
+      #     PORTFOLIO_IP: ${{ secrets.PORTFOLIO_IP }}
       - name: update project in server
         uses: ./.github/actions/update_server
-        with:
-          PORTFOLIO_IP: ${{ secrets.PORTFOLIO_IP }}
