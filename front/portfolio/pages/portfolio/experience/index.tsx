@@ -7,9 +7,11 @@ async function getExperiences() {
     const uri = `${process.env.NEXT_PUBLIC_BACK_API_URI}/professional-experiences`
     console.log({ uri })
     const { message, data } = await portofioApi.get<ProfessionalExperience[]>(uri)
-    if (message) {
+    if (!data) {
         console.error(`Error consultando las experiencias profesionales: ${message}`)
+        return
     }
+    console.log({ data })
     return data
 }
 
