@@ -6,12 +6,13 @@
     },
     "index": {
         "title": "Javier",
-        "bigHi": "Hi!",
+        "bigHi": "Greetings!",
         "myNameIs": "My name is...",
         "and": "And...",
         "beWelcomeTo": "Be welcome to...",
         "myPortfolioButton": "My Portfolio!",
-        "secondaryPortfolioButton": "Come on! Click me and let you know more about me!"
+        "secondaryPortfolioButton": "Come on! Click me and let you know more about me!",
+        "tooltipMessage": "Text me! I don't bite... Too hard"
     },
     "experience": {
         "title": "Experience"
