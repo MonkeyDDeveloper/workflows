@@ -5,8 +5,13 @@
         "projects": "Projects"
     },
     "index": {
-        "title": "Javier Fray En",
-        "bigHi": "Hi!"
+        "title": "Javier",
+        "bigHi": "Hi!",
+        "myNameIs": "My name is...",
+        "and": "And...",
+        "beWelcomeTo": "Be welcome to...",
+        "myPortfolioButton": "My Portfolio!",
+        "secondaryPortfolioButton": "Come on! Click me and let you know more about me!"
     },
     "experience": {
         "title": "Experience"

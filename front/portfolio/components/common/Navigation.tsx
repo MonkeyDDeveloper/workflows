@@ -1,7 +1,6 @@
 "use client"
 
 // import Link from "next/link"
-import { cn } from "../../lib/utils/cn"
 import { useTranslations } from "next-intl"
 import { useRouter } from "next/router"
 import LanguageSwitcher from "./LaguageSwitcher"
@@ -30,7 +29,7 @@ export default function Navigation() {
                     className="sm:hidden"
                 />
                 <NavbarBrand>
-                    <span className="font-minecraft text-cyan-600 text-lg">
+                    <span className="font-minecraft text-cyan-600 text-xl">
                         <i>MonkeyDeveloper</i>
                     </span>
                 </NavbarBrand>
