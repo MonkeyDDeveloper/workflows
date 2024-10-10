@@ -17,7 +17,6 @@ runs:
         username: root
         key: ${{ inputs.PORTFOLIO_SSH_KEY }}
         script: |                          
-          echo "hello" >> ~/test.txt
           ~/app/scripts/pull_changes.sh
           ~/app/scripts/new_update_project.sh
     
