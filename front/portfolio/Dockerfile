@@ -4,9 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-# RUN chmod 666 .env
-# RUN chmod +x .env
-
 RUN npm install
 
 RUN npm run build
