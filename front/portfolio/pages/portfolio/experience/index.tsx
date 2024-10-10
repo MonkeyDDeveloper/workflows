@@ -6,8 +6,11 @@ import { useTranslations } from "next-intl"
 async function getExperiences() {
     const uri = `${process.env.NEXT_PUBLIC_BACK_API_URI}/professional-experiences`
     console.log({ uri })
-    const { message, data } = await portofioApi.get<ProfessionalExperience>(uri)
-    console.log({ message, data })
+    const { message, data } = await portofioApi.get<ProfessionalExperience[]>(uri)
+    if (message) {
+        console.error(`Error consultando las experiencias profesionales: ${message}`)
+    }
+    return data
 }
 
 export default function Index() {
