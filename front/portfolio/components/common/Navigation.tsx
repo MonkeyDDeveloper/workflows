@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl"
 import { useRouter } from "next/router"
 import LanguageSwitcher from "./LaguageSwitcher"
 import DarkModeToggle from "./DarkModeToggle"
+import WhatsApp from "../icons/Whatsapp"
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button, Link } from "@nextui-org/react";
 import { useState } from "react"
 
@@ -22,7 +23,7 @@ export default function Navigation() {
     ]
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen}>
+        <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -66,6 +67,11 @@ export default function Navigation() {
                         </Link>
                     </NavbarMenuItem>
                 ))}
+                <NavbarItem className="mt-4">
+                    <a className="text-[#00bb2d]" href="https://wa.me/593988433654" target="_blank">
+                        <WhatsApp width={36} height={36} />
+                    </a>
+                </NavbarItem>
                 <NavbarItem className="mt-4">
                     <LanguageSwitcher />
                 </NavbarItem>
