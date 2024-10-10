@@ -2,8 +2,11 @@ import { useTranslations } from "next-intl"
 import { motion } from "framer-motion";
 import { Button, ButtonGroup } from "@nextui-org/react";
 import { useState } from "react";
+import { Tooltip } from "@nextui-org/react";
 import HeadPhones from "@/components/icons/HeadPhones"
 import ClickHand from "@/components/icons/ClickHand"
+import WhatsApp from "@/components/icons/Whatsapp";
+import RightArrow from "@/components/icons/ArrowRight";
 
 export default function Index() {
     const t = useTranslations()
@@ -12,16 +15,16 @@ export default function Index() {
     return (
         <section className="w-11/12 mx-auto">
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-                <p className="mb-2 text-center text-7xl text-cyan-200 font-bold">{t('index.bigHi')}</p>
+                <p className="mb-4 text-center text-orange-600 dark:text-orange-400 font-minecraft text-4xl font-bold">{t('index.bigHi')}</p>
             </motion.section>
             <motion.section className="mb-4" initial={{ opacity: 0 }} whileInView={{ opacity: 600 }} transition={{ delay: 0.5 }}>
-                <p className="mb-2 text-center text-xs text-cyan-200 font-bold">{t('index.myNameIs')}</p>
+                <p className="mb-2 text-center font-minecraft text-xs  text-orange-600 dark:text-cyan-200 font-bold">{t('index.myNameIs')}</p>
             </motion.section>
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1 }}>
-                <p className="mb-2 text-center font-minecraft text-7xl text-cyan-600 font-bold">{t('index.title')}</p>
+                <p className="mb-4 text-center font-minecraft text-7xl text-cyan-600 font-bold underline underline-offset-8">{t('index.title')}</p>
             </motion.section>
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.5, duration: 2 }}>
-                <p className="mb-2 text-center font-minecraft text-xs text-cyan-200 font-bold">{t('index.and')}</p>
+                <p className="mb-2 text-center font-minecraft text-xs text-orange-600 dark:text-cyan-200 font-bold">{t('index.and')}</p>
             </motion.section>
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 2.5, duration: 3 }}>
                 <p className="mb-8 text-center font-minecraft text-6xl text-cyan-600 font-bold">{t('index.beWelcomeTo')}</p>
@@ -31,53 +34,60 @@ export default function Index() {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 3.5, duration: 3 }}
             >
-                <motion.section
+                <motion.div
+                    initial={{ borderRadius: 40, boxShadow: "none" }}
                     whileHover={{
-                        x: [0, 1, -1, 0],
+                        boxShadow: [
+                            "0px 0px 10px rgba(255, 0, 0, 0.5)",
+                            "0px 0px 40px rgba(255, 100, 0, 0.5)",
+                            "0px 0px 10px rgba(255, 0, 0, 0.5)",
+                            "0px 0px 40px rgba(255, 100, 0, 0.5)",
+                            "0px 0px 80px rgba(255, 0, 0, 0.5)",
+                        ],
                     }}
-                    transition={{ duration: 0.2, repeat: Infinity }}
+                    transition={{ duration: 2 }}
+                    onHoverStart={() => {
+                        setButtonHovered(true)
+                        setButtonColor("warning")
+                    }}
+                    onHoverEnd={() => {
+                        setButtonHovered(false)
+                        setButtonColor("primary")
+                    }}
                 >
-                    <motion.div
-                        initial={{ borderRadius: 40, boxShadow: "none" }}
-                        whileHover={{
-                            boxShadow: [
-                                "0px 0px 10px rgba(255, 0, 0, 0.5)",
-                                "0px 0px 40px rgba(255, 100, 0, 0.5)",
-                                "0px 0px 10px rgba(255, 0, 0, 0.5)",
-                                "0px 0px 40px rgba(255, 100, 0, 0.5)",
-                                "0px 0px 80px rgba(255, 0, 0, 0.5)",
-                            ],
-                        }}
-                        whileInView={{
-                            y: [0, -10, 0],
-                        }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        onHoverStart={() => {
-                            setButtonHovered(true)
-                            setButtonColor("warning")
-                        }}
-                        onHoverEnd={() => {
-                            setButtonHovered(false)
-                            setButtonColor("primary")
-                        }}
-                    >
-                        <Button size="lg" color={buttonColor}>
-                            <span className="font-minecraft">
-                                {
-                                    buttonHovered
-                                        ? t('index.secondaryPortfolioButton')
-                                        : t('index.myPortfolioButton')
-                                }
-                            </span>
-                            <HeadPhones />
+                    <Button size="lg" color={buttonColor}>
+                        <span className="font-minecraft">
                             {
                                 buttonHovered
-                                    ? <ClickHand />
-                                    : null
+                                    ? t('index.secondaryPortfolioButton')
+                                    : t('index.myPortfolioButton')
                             }
-                        </Button>
-                    </motion.div>
-                </motion.section>
+                        </span>
+                        <RightArrow className={buttonHovered ? 'text-black' : 'text-white'} />
+                    </Button>
+                </motion.div>
+            </motion.section>
+            <motion.section
+                className="mt-6 flex flex-wrap justify-center text-[#00bb2d] hover:cursor-pointer"
+                whileInView={{
+                    y: [0, -10, 0],
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+            >
+                <Tooltip
+                    classNames={{
+                        content: [
+                            "font-minecraft"
+                        ]
+                    }}
+                    content={t("index.tooltipMessage")}
+                    placement="bottom"
+                    offset={15}
+                >
+                    <a href="https://wa.me/593988433654" target="_blank">
+                        <WhatsApp width={36} height={36} />
+                    </a>
+                </Tooltip>
             </motion.section>
         </section>
     )
