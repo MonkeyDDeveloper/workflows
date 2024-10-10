@@ -20,6 +20,7 @@ export default function Index() {
 
     return (
         <section>
+            test auto deploy
             <h1>{t('experience.title')}</h1>
         </section>
     )
