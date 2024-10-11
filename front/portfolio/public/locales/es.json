@@ -2,11 +2,17 @@
     "navigation": {
         "index": "Inicio",
         "experience": "Experiencia",
-        "projects": "Projectos"
+        "projects": "Proyectos"
     },
     "index": {
-        "title": "Javier Fray Es",
-        "bigHi": "Hola!"
+        "title": "Javier",
+        "bigHi": "Saludos!",
+        "myNameIs": "Mi nombre es...",
+        "and": "Y...",
+        "beWelcomeTo": "Sean bienvenidos a...",
+        "myPortfolioButton": "Mi portafolio!",
+        "secondaryPortfolioButton": "Vamos! Da click aquí para que sepas más de mi!",
+        "tooltipMessage": "Escribeme! No muerdo... Muy fuerte."
     },
     "experience": {
         "title": "Experiencia"
