@@ -12,7 +12,8 @@
         "beWelcomeTo": "Be welcome to...",
         "myPortfolioButton": "My Portfolio!",
         "secondaryPortfolioButton": "Come on! Click me and let you know more about me!",
-        "tooltipMessage": "Text me! I don't bite... Too hard"
+        "tooltipMessage": "Text me! I don't bite... Too hard",
+        "linkedinMessage": "Visit my LinkedIn!"
     },
     "experience": {
         "title": "Experience"

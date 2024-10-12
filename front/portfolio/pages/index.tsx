@@ -21,7 +21,30 @@ export default function Index() {
                 <p className="mb-2 text-center font-minecraft text-xs  text-orange-600 dark:text-cyan-200 font-bold">{t('index.myNameIs')}</p>
             </motion.section>
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1 }}>
-                <p className="mb-4 text-center font-minecraft text-7xl text-cyan-600 font-bold underline underline-offset-8">{t('index.title')}</p>
+                <motion.p
+                    className="mb-4 text-center"
+                >
+                    <Tooltip
+                        classNames={{
+                            content: [
+                                "font-minecraft"
+                            ]
+                        }}
+                        content={t("index.linkedinMessage")}
+                        placement="right"
+                        offset={15}
+                    >
+                        <motion.a
+                            href="https://www.linkedin.com/in/javier-fray/"
+                            target="_blank"
+                            className="font-minecraft text-7xl text-cyan-600 font-bold underline underline-offset-8 inline-block"
+                            whileHover={{ x: [-10, 10, 0] }}
+                            transition={{ duration: .1 }}
+                        >
+                            {t('index.title')}
+                        </motion.a>
+                    </Tooltip>
+                </motion.p>
             </motion.section>
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.5, duration: 2 }}>
                 <p className="mb-2 text-center font-minecraft text-xs text-orange-600 dark:text-cyan-200 font-bold">{t('index.and')}</p>
