@@ -14,6 +14,9 @@ namespace PortfolioBackend.Context
         public DbSet<Responsabilitie> Responsabilities { get; set; }
         public DbSet<Technologie> Technologies { get; set; }
 
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectTask> ProjectTasks { get; set; }
+
         public DbSet<TechnologieExperience> TechnologiesExperiences { get; set; }
 
         public required string postgresConnectionString { get; set; }
@@ -60,7 +63,30 @@ namespace PortfolioBackend.Context
             builder.Entity<Responsabilitie>()
                 .ToTable("responsabilities");
 
-            // Initial data
+            builder.Entity<Project>()
+                .ToTable("projects");
+
+            builder.Entity<ProjectTask>()
+                .ToTable("project_tasks");
+
+            builder.Entity<Project>()
+                .HasMany(p => p.ProjectTasks)
+                .WithOne(pt => pt.Project);
+
+            builder.Entity<Project>()
+                .HasMany(p => p.TechnologieProjects)
+                .WithOne(tp => tp.Project);
+
+            builder.Entity<ProjectTask>()
+                .HasOne(pt => pt.Project);
+
+            builder.Entity<TechnologieProject>()
+                .HasOne(tp => tp.Project);
+
+            builder.Entity<TechnologieProject>()
+                .HasOne(tp => tp.Technologie);
+
+            // Initial data for experiences
             builder.Entity<ProfessionalExperience>().HasData(
                 new ProfessionalExperience
                 {
@@ -172,7 +198,22 @@ namespace PortfolioBackend.Context
                 new Technologie { Id = 34, Name = "MongoDB 5.0" },
                 new Technologie { Id = 35, Name = "DigitalOcean" },
                 new Technologie { Id = 36, Name = "Nginx" },
-                new Technologie { Id = 37, Name = "NameCheap" }
+                new Technologie { Id = 37, Name = "NameCheap" },
+
+                // Otras tecnologías
+                new Technologie { Id = 38, Name = "JsonWebTokens" },
+                new Technologie { Id = 39, Name = "Python 3.10.12" },
+                new Technologie { Id = 40, Name = "Flask 3.0.3" },
+                new Technologie { Id = 41, Name = "PyMongo 4.7.2" },
+                new Technologie { Id = 42, Name = "Mongoose" },
+                new Technologie { Id = 43, Name = "AWS API Gateway" },
+                new Technologie { Id = 44, Name = "AWS Lambda Functions" },
+                new Technologie { Id = 45, Name = "Nextjs" },
+                new Technologie { Id = 46, Name = "PostgreSQL" },
+                new Technologie { Id = 47, Name = ".NET 8" },
+                new Technologie { Id = 48, Name = "Entity Framework" },
+                new Technologie { Id = 49, Name = "Digital Ocean Droplets" },
+                new Technologie { Id = 50, Name = "Github Actions" }
             );
 
             builder.Entity<TechnologieExperience>().HasData(
@@ -218,6 +259,44 @@ namespace PortfolioBackend.Context
                 new TechnologieExperience { Id = 33, TechnologieId = 35, ExperienceId = 1 }, // DigitalOcean - MonkeyDevelopment
                 new TechnologieExperience { Id = 34, TechnologieId = 36, ExperienceId = 1 }, // Nginx - MonkeyDevelopment
                 new TechnologieExperience { Id = 35, TechnologieId = 37, ExperienceId = 1 }  // NameCheap - MonkeyDevelopment
+            );
+
+            // Initial data for projects
+
+            builder.Entity<Project>().HasData(
+                new Project { Id = 1, Name = "Dockerized Product Management System with Authentication", Description = "" },
+                new Project { Id = 2, Name = "Dockerized Python Flask Rest Api - MongoDB", Description = "" },
+                new Project { Id = 3, Name = "Api Gateway - Lambda Functions Rest Api", Description = "" },
+                new Project { Id = 4, Name = "Dockerized Portfolio - .Net - Postgres", Description = "" }
+            );
+
+            builder.Entity<TechnologieProject>().HasData(
+                new TechnologieProject() { Id = 1, ProjectId = 1, TechnologieId = 1},
+                new TechnologieProject() { Id = 2, ProjectId = 1, TechnologieId = 2},
+                new TechnologieProject() { Id = 3, ProjectId = 1, TechnologieId = 6},
+                new TechnologieProject() { Id = 4, ProjectId = 1, TechnologieId = 11},
+                new TechnologieProject() { Id = 5, ProjectId = 1, TechnologieId = 12 },
+                new TechnologieProject() { Id = 6, ProjectId = 1, TechnologieId = 33 },
+                new TechnologieProject() { Id = 7, ProjectId = 1, TechnologieId = 34 },
+                new TechnologieProject() { Id = 8, ProjectId = 1, TechnologieId = 28 },
+                new TechnologieProject() { Id = 9, ProjectId = 1, TechnologieId = 38 },
+                new TechnologieProject() { Id = 10, ProjectId = 2, TechnologieId = 12 },
+                new TechnologieProject() { Id = 11, ProjectId = 2, TechnologieId = 39 },
+                new TechnologieProject() { Id = 12, ProjectId = 2, TechnologieId = 40 },
+                new TechnologieProject() { Id = 13, ProjectId = 2, TechnologieId = 41 },
+                new TechnologieProject() { Id = 14, ProjectId = 3, TechnologieId = 42 },
+                new TechnologieProject() { Id = 15, ProjectId = 3, TechnologieId = 43 },
+                new TechnologieProject() { Id = 16, ProjectId = 3, TechnologieId = 44 },
+                new TechnologieProject() { Id = 17, ProjectId = 3, TechnologieId = 28 },
+                new TechnologieProject() { Id = 18, ProjectId = 4, TechnologieId =  45 },
+                new TechnologieProject() { Id = 19, ProjectId = 4, TechnologieId =  46 },
+                new TechnologieProject() { Id = 20, ProjectId = 4, TechnologieId =  47 },
+                new TechnologieProject() { Id = 21, ProjectId = 4, TechnologieId =  48 },
+                new TechnologieProject() { Id = 22, ProjectId = 4, TechnologieId =  49 },
+                new TechnologieProject() { Id = 23, ProjectId = 4, TechnologieId =  50 },
+                new TechnologieProject() { Id = 24, ProjectId = 4, TechnologieId =  28 },
+                new TechnologieProject() { Id = 25, ProjectId = 4, TechnologieId =  12 },
+                new TechnologieProject() { Id = 26, ProjectId = 4, TechnologieId =  23 }
             );
         }
 

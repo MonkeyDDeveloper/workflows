@@ -5,14 +5,15 @@ import { RiMoonLine, RiSunLine } from "react-icons/ri";
 import Switch from "./Switch";
 
 const DarkModeToggle = () => {
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme, resolvedTheme } = useTheme();
 
     function handleChange(checked: boolean) {
+        console.log(checked);
         setTheme(checked ? "dark" : "light");
     }
 
     return (
-        <Switch isChecked={theme == "dark"} onToggle={handleChange} />
+        <Switch isChecked={resolvedTheme == "dark"} onToggle={handleChange} />
     );
 };
 

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PortfolioBackend.Context;
@@ -11,9 +12,11 @@ using PortfolioBackend.Context;
 namespace PortfolioBackend.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    partial class PortfolioDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241012203559_tables_and_relations_for_projects")]
+    partial class tables_and_relations_for_projects
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,32 +113,6 @@ namespace PortfolioBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("projects", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "",
-                            Name = "Dockerized Product Management System with Authentication"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "",
-                            Name = "Dockerized Python Flask Rest Api - MongoDB"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "",
-                            Name = "Api Gateway - Lambda Functions Rest Api"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "",
-                            Name = "Dockerized Portfolio - .Net - Postgres"
-                        });
                 });
 
             modelBuilder.Entity("PortfolioBackend.Models.ProjectTask", b =>
@@ -529,71 +506,6 @@ namespace PortfolioBackend.Migrations
                         {
                             Id = 37,
                             Name = "NameCheap"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Name = "JsonWebTokens"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Name = "Python 3.10.12"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Name = "Flask 3.0.3"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Name = "PyMongo 4.7.2"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Name = "Mongoose"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Name = "AWS API Gateway"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Name = "AWS Lambda Functions"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Name = "Nextjs"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Name = "PostgreSQL"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Name = ".NET 8"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Name = "Entity Framework"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Name = "Digital Ocean Droplets"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Name = "Github Actions"
                         });
                 });
 
@@ -857,164 +769,6 @@ namespace PortfolioBackend.Migrations
                     b.HasIndex("TechnologieId");
 
                     b.ToTable("TechnologieProject");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ProjectId = 1,
-                            TechnologieId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ProjectId = 1,
-                            TechnologieId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ProjectId = 1,
-                            TechnologieId = 6
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ProjectId = 1,
-                            TechnologieId = 11
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ProjectId = 1,
-                            TechnologieId = 12
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ProjectId = 1,
-                            TechnologieId = 33
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ProjectId = 1,
-                            TechnologieId = 34
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ProjectId = 1,
-                            TechnologieId = 28
-                        },
-                        new
-                        {
-                            Id = 9,
-                            ProjectId = 1,
-                            TechnologieId = 38
-                        },
-                        new
-                        {
-                            Id = 10,
-                            ProjectId = 2,
-                            TechnologieId = 12
-                        },
-                        new
-                        {
-                            Id = 11,
-                            ProjectId = 2,
-                            TechnologieId = 39
-                        },
-                        new
-                        {
-                            Id = 12,
-                            ProjectId = 2,
-                            TechnologieId = 40
-                        },
-                        new
-                        {
-                            Id = 13,
-                            ProjectId = 2,
-                            TechnologieId = 41
-                        },
-                        new
-                        {
-                            Id = 14,
-                            ProjectId = 3,
-                            TechnologieId = 42
-                        },
-                        new
-                        {
-                            Id = 15,
-                            ProjectId = 3,
-                            TechnologieId = 43
-                        },
-                        new
-                        {
-                            Id = 16,
-                            ProjectId = 3,
-                            TechnologieId = 44
-                        },
-                        new
-                        {
-                            Id = 17,
-                            ProjectId = 3,
-                            TechnologieId = 28
-                        },
-                        new
-                        {
-                            Id = 18,
-                            ProjectId = 4,
-                            TechnologieId = 45
-                        },
-                        new
-                        {
-                            Id = 19,
-                            ProjectId = 4,
-                            TechnologieId = 46
-                        },
-                        new
-                        {
-                            Id = 20,
-                            ProjectId = 4,
-                            TechnologieId = 47
-                        },
-                        new
-                        {
-                            Id = 21,
-                            ProjectId = 4,
-                            TechnologieId = 48
-                        },
-                        new
-                        {
-                            Id = 22,
-                            ProjectId = 4,
-                            TechnologieId = 49
-                        },
-                        new
-                        {
-                            Id = 23,
-                            ProjectId = 4,
-                            TechnologieId = 50
-                        },
-                        new
-                        {
-                            Id = 24,
-                            ProjectId = 4,
-                            TechnologieId = 28
-                        },
-                        new
-                        {
-                            Id = 25,
-                            ProjectId = 4,
-                            TechnologieId = 12
-                        },
-                        new
-                        {
-                            Id = 26,
-                            ProjectId = 4,
-                            TechnologieId = 23
-                        });
                 });
 
             modelBuilder.Entity("PortfolioBackend.Models.ProjectTask", b =>

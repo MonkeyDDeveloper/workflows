@@ -2,24 +2,25 @@ import React from "react";
 import styled from "styled-components";
 
 interface SwitchProps {
-    isChecked: boolean;
-    onToggle: (a: boolean) => void;
+  isChecked: boolean;
+  onToggle: (a: boolean) => void;
 }
 
 const Switch: React.FC<SwitchProps> = ({ isChecked, onToggle }) => {
-    return (
-        <StyledWrapper>
-            <label className="switch">
-                <input
-                    type="checkbox"
-                    className="input__check"
-                    checked={isChecked}
-                    onChange={(e) => onToggle(e.target.checked)}
-                />
-                <span className="slider" />
-            </label>
-        </StyledWrapper>
-    );
+  console.log({ isChecked })
+  return (
+    <StyledWrapper>
+      <label className="switch">
+        <input
+          type="checkbox"
+          className="input__check"
+          checked={isChecked}
+          onChange={(e) => onToggle(e.target.checked)}
+        />
+        <span className="slider" />
+      </label>
+    </StyledWrapper>
+  );
 };
 
 const StyledWrapper = styled.div`

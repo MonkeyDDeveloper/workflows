@@ -6,6 +6,7 @@ export default function LanguageSwitcher() {
     const [languageSelected, setLanguageSelected] = useState(router.locale)
 
     function handleChange(locale: string) {
+        setLanguageSelected(locale)
         router.push(router.asPath, router.asPath, { locale });
     }
 
