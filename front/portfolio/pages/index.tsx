@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { Button, ButtonGroup } from "@nextui-org/react";
 import { useState } from "react";
 import { Tooltip } from "@nextui-org/react";
-import HeadPhones from "@/components/icons/HeadPhones"
-import ClickHand from "@/components/icons/ClickHand"
 import WhatsApp from "@/components/icons/Whatsapp";
 import RightArrow from "@/components/icons/ArrowRight";
 
@@ -37,7 +35,7 @@ export default function Index() {
                         <motion.a
                             href="https://www.linkedin.com/in/javier-fray/"
                             target="_blank"
-                            className="font-minecraft text-7xl text-cyan-600 font-bold underline underline-offset-8 inline-block"
+                            className="font-minecraft text-7xl text-cyan-600 font-bold hover:underline hover:underline-offset-8 inline-block"
                             whileHover={{ x: [-10, 10, 0] }}
                             transition={{ duration: .1 }}
                         >
@@ -49,13 +47,13 @@ export default function Index() {
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.5, duration: 2 }}>
                 <p className="mb-2 text-center font-minecraft text-xs text-orange-600 dark:text-cyan-200 font-bold">{t('index.and')}</p>
             </motion.section>
-            <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 2.5, duration: 3 }}>
+            <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 2, duration: 2 }}>
                 <p className="mb-8 text-center font-minecraft text-6xl text-cyan-600 font-bold">{t('index.beWelcomeTo')}</p>
             </motion.section>
             <motion.section className="flex justify-center"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ delay: 3.5, duration: 3 }}
+                transition={{ delay: 2.5, duration: 2 }}
             >
                 <motion.div
                     initial={{ borderRadius: 40, boxShadow: "none" }}

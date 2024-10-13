@@ -7,7 +7,6 @@ interface SwitchProps {
 }
 
 const Switch: React.FC<SwitchProps> = ({ isChecked, onToggle }) => {
-  console.log({ isChecked })
   return (
     <StyledWrapper>
       <label className="switch">
