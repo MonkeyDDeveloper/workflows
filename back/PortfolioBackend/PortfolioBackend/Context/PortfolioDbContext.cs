@@ -74,7 +74,7 @@ namespace PortfolioBackend.Context
                 .WithOne(pt => pt.Project);
 
             builder.Entity<Project>()
-                .HasMany(p => p.TechnologieProjects)
+                .HasMany(p => p.ProjectTechnologies)
                 .WithOne(tp => tp.Project);
 
             builder.Entity<ProjectTask>()

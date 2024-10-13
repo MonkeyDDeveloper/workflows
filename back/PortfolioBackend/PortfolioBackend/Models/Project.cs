@@ -19,6 +19,6 @@ namespace PortfolioBackend.Models
         public ICollection<ProjectTask> ProjectTasks { get; set; } = null!;
 
         [NotMapped]
-        public ICollection<TechnologieProject> TechnologieProjects { get; set; } = null!;
+        public ICollection<TechnologieProject> ProjectTechnologies { get; set; } = null!;
     }
 }

@@ -31,7 +31,7 @@ namespace PortfolioBackend.Controllers
 
             try
             {
-                projects = await _context.Projects.Include(p => p.ProjectTasks).Include(p => p.TechnologieProjects).ThenInclude(tp => tp.Technologie).ToListAsync();
+                projects = await _context.Projects.Include(p => p.ProjectTasks).Include(p => p.ProjectTechnologies).ThenInclude(tp => tp.Technologie).ToListAsync();
                  
             }
             catch (Exception ex) 
