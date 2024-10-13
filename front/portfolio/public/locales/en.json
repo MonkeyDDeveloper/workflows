@@ -16,7 +16,9 @@
         "linkedinMessage": "Visit my LinkedIn!"
     },
     "experience": {
-        "title": "Experience"
+        "title": "Experience",
+        "description": "These are the companies I have worked in",
+        "description2": "I have learnt a lot from them!"
     },
     "projects": {
         "title": "Projects"
