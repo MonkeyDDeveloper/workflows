@@ -1,12 +1,12 @@
 "use client"
 
-// import Link from "next/link"
+import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { useRouter } from "next/router"
 import LanguageSwitcher from "./LaguageSwitcher"
 import DarkModeToggle from "./DarkModeToggle"
 import WhatsApp from "../icons/Whatsapp"
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button, Link } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
 import { useState } from "react"
 
 
