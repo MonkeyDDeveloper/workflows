@@ -17,6 +17,9 @@ namespace PortfolioBackend.Models
         [Column("end_date")]
         public required DateOnly EndDate { get; set; }
 
+        [Column("is_current")]
+        public Boolean IsCurrent { get; set; } = false;
+
         [NotMapped]
         public ICollection<Responsabilitie> Responsabilities { get; set; } = null!;
 

@@ -118,7 +118,8 @@ namespace PortfolioBackend.Context
                     Title = "Software Engineer at Dacodes",
                     Description = "Created an application to manage the capacitation of operators in Yucatán, México.",
                     StartDate = new DateOnly(2024, 5, 1),
-                    EndDate = new DateOnly(2024, 12, 31)
+                    EndDate = new DateOnly(2024, 12, 31),
+                    IsCurrent = true
                 }
             );
 
