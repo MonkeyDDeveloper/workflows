@@ -13,7 +13,7 @@ export default function ExperienceCard({ experience }: { experience: Professiona
             <CardBody className="overflow-visible py-2">
                 <Image
                     alt="Card background"
-                    className="object-cover rounded-xl"
+                    className="object-cover rounded-xl w-full"
                     src="https://nextui.org/images/hero-card-complete.jpeg"
                     width={270}
                 />
