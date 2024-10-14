@@ -6,6 +6,7 @@ export interface ProfessionalExperience {
     description: string,
     startDate: string,
     endDate: string,
+    isCurrent: boolean,
     responsabilities?: Responsabilitie[],
     technologieExperiences?: TechnologieExperience[]
 }
