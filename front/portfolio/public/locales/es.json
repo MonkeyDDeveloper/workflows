@@ -18,7 +18,8 @@
     "experience": {
         "title": "Experiencia",
         "description": "Estas son las empresas en las que he trabajado",
-        "description2": "He aprendido mucho de ellas!"
+        "description2": "He aprendido mucho de ellas!",
+        "present": "Actualidad"
     },
     "projects": {
         "title": "Proyectos"
