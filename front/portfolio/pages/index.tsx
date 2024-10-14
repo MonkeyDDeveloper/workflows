@@ -48,7 +48,7 @@ export default function Index() {
                 <p className="mb-2 text-center font-minecraft text-xs text-orange-600 dark:text-cyan-200 font-bold">{t('index.and')}</p>
             </motion.section>
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 2, duration: 2 }}>
-                <p className="mb-8 text-center font-minecraft text-6xl text-cyan-600 font-bold">{t('index.beWelcomeTo')}</p>
+                <p className="mb-8 text-center font-minecraft text-4xl md:text-6xl text-cyan-600 font-bold">{t('index.beWelcomeTo')}</p>
             </motion.section>
             <motion.section className="flex justify-center"
                 initial={{ opacity: 0 }}
@@ -76,7 +76,17 @@ export default function Index() {
                         setButtonColor("primary")
                     }}
                 >
-                    <Button size="lg" color={buttonColor}>
+                    <Button className="max-w-full flex md:hidden" size="sm" color={buttonColor}>
+                        <span className="font-minecraft">
+                            {
+                                buttonHovered
+                                    ? t('index.secondaryPortfolioButton')
+                                    : t('index.myPortfolioButton')
+                            }
+                        </span>
+                        <RightArrow className={buttonHovered ? 'text-black' : 'text-white'} />
+                    </Button>
+                    <Button className="max-w-full hidden md:flex" size="lg" color={buttonColor}>
                         <span className="font-minecraft">
                             {
                                 buttonHovered
