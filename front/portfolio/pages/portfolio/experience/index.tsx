@@ -3,7 +3,7 @@ import { portofioApi } from "../../../services/portfolio.services"
 import { ProfessionalExperience } from "../../../models/ProfessionalExperience"
 import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
-import ExperienceCard from "./components/ExperienceCard"
+import ExperienceCard from "../../../components/pages/experience/ExperienceCard"
 import { useState } from "react"
 
 export default function Index() {
