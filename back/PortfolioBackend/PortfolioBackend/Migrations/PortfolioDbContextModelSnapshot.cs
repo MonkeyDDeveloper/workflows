@@ -61,7 +61,7 @@ namespace PortfolioBackend.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Created a web application to streamline the student enrollment process.",
+                            Description = "We created a web application to streamline the student enrollment process.",
                             EndDate = new DateOnly(2022, 7, 31),
                             IsCurrent = false,
                             StartDate = new DateOnly(2021, 2, 1),
@@ -343,6 +343,11 @@ namespace PortfolioBackend.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Abbr")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("abbr");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text")
@@ -356,251 +361,301 @@ namespace PortfolioBackend.Migrations
                         new
                         {
                             Id = 1,
+                            Abbr = "nuxt",
                             Name = "Nuxt 3.10.2"
                         },
                         new
                         {
                             Id = 2,
+                            Abbr = "vue",
                             Name = "Vue.js 3.4.x"
                         },
                         new
                         {
                             Id = 3,
+                            Abbr = "vue",
                             Name = "Vue.js 2.7"
                         },
                         new
                         {
                             Id = 4,
+                            Abbr = "vuetify",
                             Name = "Vuetify 2.6"
                         },
                         new
                         {
                             Id = 5,
+                            Abbr = "bootstrap",
                             Name = "Bootstrap 4.x"
                         },
                         new
                         {
                             Id = 6,
+                            Abbr = "nuxtui",
                             Name = "Nuxt/ui 2.13.0"
                         },
                         new
                         {
                             Id = 7,
+                            Abbr = "tailwind",
                             Name = "TailwindCSS 3.4.1"
                         },
                         new
                         {
                             Id = 8,
+                            Abbr = "zod",
                             Name = "Zod 3.2.24"
                         },
                         new
                         {
                             Id = 9,
+                            Abbr = "node",
                             Name = "Node 20.0.0"
                         },
                         new
                         {
                             Id = 10,
+                            Abbr = "postgres",
                             Name = "PostgreSQL 12"
                         },
                         new
                         {
                             Id = 11,
+                            Abbr = "git",
                             Name = "Git"
                         },
                         new
                         {
                             Id = 12,
+                            Abbr = "docker",
                             Name = "Docker"
                         },
                         new
                         {
                             Id = 13,
+                            Abbr = "nuxt",
                             Name = "Nuxt 3.10.2"
                         },
                         new
                         {
                             Id = 14,
+                            Abbr = "vue",
                             Name = "Vue.js 3.4.x"
                         },
                         new
                         {
                             Id = 15,
+                            Abbr = "nuxtui",
                             Name = "Nuxt/ui 2.13.0"
                         },
                         new
                         {
                             Id = 16,
+                            Abbr = "tailwind",
                             Name = "TailwindCSS 3.4.1"
                         },
                         new
                         {
                             Id = 17,
+                            Abbr = "zod",
                             Name = "Zod 3.2.24"
                         },
                         new
                         {
                             Id = 18,
+                            Abbr = "node",
                             Name = "Node 20.0.0"
                         },
                         new
                         {
                             Id = 19,
+                            Abbr = "i18n",
                             Name = "i18n 8.1.1"
                         },
                         new
                         {
                             Id = 20,
+                            Abbr = "resend",
                             Name = "Resend 3.2.0"
                         },
                         new
                         {
                             Id = 21,
+                            Abbr = "shopify",
                             Name = "Shopify Dawn 13.0.1"
                         },
                         new
                         {
                             Id = 22,
+                            Abbr = "liquidtemplate",
                             Name = "Liquid Template Language 5.4.0"
                         },
                         new
                         {
                             Id = 23,
+                            Abbr = "git",
                             Name = "Git"
                         },
                         new
                         {
                             Id = 24,
+                            Abbr = "vue",
                             Name = "Vue.js 3.2.3"
                         },
                         new
                         {
                             Id = 25,
+                            Abbr = "node",
                             Name = "Node 10.24.0"
                         },
                         new
                         {
                             Id = 26,
+                            Abbr = "quasar",
                             Name = "Quasar Framework 0.17"
                         },
                         new
                         {
                             Id = 27,
+                            Abbr = "mongo",
                             Name = "MongoDB 5.0"
                         },
                         new
                         {
                             Id = 28,
+                            Abbr = "typescript",
                             Name = "TypeScript 5.4"
                         },
                         new
                         {
                             Id = 29,
+                            Abbr = "javascript",
                             Name = "JavaScript (Vanilla)"
                         },
                         new
                         {
                             Id = 30,
+                            Abbr = "pugjs",
                             Name = "Pug.js (HTML)"
                         },
                         new
                         {
                             Id = 31,
+                            Abbr = "bootstrap",
                             Name = "Bootstrap 5.0"
                         },
                         new
                         {
                             Id = 32,
+                            Abbr = "node",
                             Name = "Node.js 14.0.0"
                         },
                         new
                         {
                             Id = 33,
+                            Abbr = "express",
                             Name = "Express 4.0"
                         },
                         new
                         {
                             Id = 34,
+                            Abbr = "mongo",
                             Name = "MongoDB 5.0"
                         },
                         new
                         {
                             Id = 35,
+                            Abbr = "digitalocean",
                             Name = "DigitalOcean"
                         },
                         new
                         {
                             Id = 36,
+                            Abbr = "nginx",
                             Name = "Nginx"
                         },
                         new
                         {
                             Id = 37,
+                            Abbr = "namecheap",
                             Name = "NameCheap"
                         },
                         new
                         {
                             Id = 38,
+                            Abbr = "jwt",
                             Name = "JsonWebTokens"
                         },
                         new
                         {
                             Id = 39,
+                            Abbr = "python",
                             Name = "Python 3.10.12"
                         },
                         new
                         {
                             Id = 40,
+                            Abbr = "flask",
                             Name = "Flask 3.0.3"
                         },
                         new
                         {
                             Id = 41,
+                            Abbr = "pymongo",
                             Name = "PyMongo 4.7.2"
                         },
                         new
                         {
                             Id = 42,
+                            Abbr = "mongoose",
                             Name = "Mongoose"
                         },
                         new
                         {
                             Id = 43,
+                            Abbr = "awsgateway",
                             Name = "AWS API Gateway"
                         },
                         new
                         {
                             Id = 44,
+                            Abbr = "awslambda",
                             Name = "AWS Lambda Functions"
                         },
                         new
                         {
                             Id = 45,
+                            Abbr = "nextjs",
                             Name = "Nextjs"
                         },
                         new
                         {
                             Id = 46,
+                            Abbr = "postgres",
                             Name = "PostgreSQL"
                         },
                         new
                         {
                             Id = 47,
+                            Abbr = "DotNET",
                             Name = ".NET 8"
                         },
                         new
                         {
                             Id = 48,
+                            Abbr = "entityframework",
                             Name = "Entity Framework"
                         },
                         new
                         {
                             Id = 49,
+                            Abbr = "digitalocean",
                             Name = "Digital Ocean Droplets"
                         },
                         new
                         {
                             Id = 50,
+                            Abbr = "githubactions",
                             Name = "Github Actions"
                         });
                 });
