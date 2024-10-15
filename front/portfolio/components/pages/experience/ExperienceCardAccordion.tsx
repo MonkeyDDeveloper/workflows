@@ -2,23 +2,38 @@ import { Responsabilitie } from "@/models/Responsabilitie";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { useTranslations } from "next-intl"
 import { motion } from "framer-motion";
+import { Technologie } from "@/models/Technologie";
+import { useEffect, useState } from "react";
+import useScreenSize from "@/hooks/useScreenSize";
 
-export default function ExperienceCardAccordion({ responsibilites = [] }: { responsibilites: Responsabilitie[] }) {
+export default function ExperienceCardAccordion({ responsibilites = [], technologies = [] }: { responsibilites: Responsabilitie[], technologies: Technologie[] }) {
     const t = useTranslations()
-    const defaultContent =
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+    const { width, height } = useScreenSize()
+    const [expandedAccordionItems, setExpandedAccordionItems] = useState([""])
+    const itemClasses = {
+        title: "font-minecraft text-cyan-950 dark:text-orange-600 font-bold"
+    }
+
+    useEffect(() => {
+        if (width >= 768) {
+            setExpandedAccordionItems(["1", "2"])
+            return
+        }
+        setExpandedAccordionItems([])
+    }, [width])
 
     return (
-        <Accordion isCompact>
+        <Accordion isCompact selectedKeys={expandedAccordionItems} itemClasses={itemClasses}>
             <AccordionItem key="1" aria-label={t("experience.accordion.responsibilities")} title={t("experience.accordion.responsibilities")}>
-                <ul className="list-disc">
+                <ul className="list-disc md:p-1">
                     {responsibilites.map((responsability, index) => (
                         <motion.li
                             key={index}
                             initial={{ x: 10 }}
                             animate={{ x: 0 }}
-                            transition={{ delay: 0 + index / 5 }}
-                            className="text-xs text-cyan-600"
+                            whileHover={{ scale: 1.01, transition: { delay: 0 } }}
+                            transition={{ delay: 0 + index / 15 }}
+                            className="text-xs md:text-sm hover:text-orange-600 hover:cursor-pointer text-black dark:text-slate-100 md:text-black md:dark:text-slate-100"
                         >
                             {responsability.description}
                         </motion.li>
@@ -26,7 +41,20 @@ export default function ExperienceCardAccordion({ responsibilites = [] }: { resp
                 </ul>
             </AccordionItem>
             <AccordionItem key="2" aria-label={t("experience.accordion.technologies")} title={t("experience.accordion.technologies")}>
-                {defaultContent}
+                <ul className="list-disc md:p-1 grid grid-cols-2">
+                    {technologies.map((technologie, index) => (
+                        <motion.li
+                            key={index}
+                            initial={{ x: 10 }}
+                            animate={{ x: 0 }}
+                            whileHover={{ scale: 1.01, transition: { delay: 0 } }}
+                            transition={{ delay: 0 + index / 15 }}
+                            className="text-xs md:text-sm hover:text-orange-600 hover:cursor-pointer text-black dark:text-slate-100 md:text-black md:dark:text-slate-100"
+                        >
+                            {technologie.name}
+                        </motion.li>
+                    ))}
+                </ul>
             </AccordionItem>
         </Accordion>
     );
