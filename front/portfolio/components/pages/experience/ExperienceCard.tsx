@@ -13,7 +13,6 @@ export default function ExperienceCard({ experience, className = "" }: { experie
     const getTechnologies = (technologieExperiences: TechnologieExperience[]): Technologie[] => {
         return technologieExperiences.map(te => te.technologie)
     }
-    console.log({ experience })
 
     return (
         <motion.div
@@ -26,7 +25,7 @@ export default function ExperienceCard({ experience, className = "" }: { experie
             }}
             className={className}
         >
-            <Card className="py-4 shadow-sm shadow-cyan-900 hover:shadow-cyan-900 dark:shadow-black hover:shadow-lg dark:hover:shadow-white">
+            <Card className="py-4 shadow-sm shadow-cyan-900 hover:shadow-cyan-900 dark:shadow-black hover:shadow-lg dark:hover:shadow-sm dark:hover:shadow-white">
                 <motion.section
                     className="md:grid md:grid-cols-2"
                 >
