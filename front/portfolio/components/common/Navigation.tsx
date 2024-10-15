@@ -8,6 +8,7 @@ import DarkModeToggle from "./DarkModeToggle"
 import WhatsApp from "../icons/Whatsapp"
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
 import { useState } from "react"
+import { Tooltip } from "@nextui-org/react"
 
 
 export default function Navigation() {
@@ -30,9 +31,14 @@ export default function Navigation() {
                     className="sm:hidden"
                 />
                 <NavbarBrand>
-                    <span className="font-minecraft text-cyan-600 text-xl">
-                        <i>MonkeyDeveloper</i>
-                    </span>
+                    <Tooltip
+                        content={t('navigation.watchMyCv')}
+                        classNames={{ content: ["font-minecraft"] }}
+                    >
+                        <span className="font-minecraft text-cyan-600 text-xl">
+                            <a href="https://bit.ly/javier-fray-resume" target="_blank">MonkeyDeveloper</a>
+                        </span>
+                    </Tooltip>
                 </NavbarBrand>
             </NavbarContent>
 
