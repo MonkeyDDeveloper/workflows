@@ -14,6 +14,9 @@ namespace PortfolioBackend.Models
         [Column("description")]
         public required string Description { get; set; }
 
+        [Column("github_uri")]
+        public required string GithubUri { get; set; }
+
 
         [NotMapped]
         public ICollection<ProjectTask> ProjectTasks { get; set; } = null!;

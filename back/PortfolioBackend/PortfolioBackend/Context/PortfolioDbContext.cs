@@ -300,10 +300,10 @@ namespace PortfolioBackend.Context
             // Initial data for projects
 
             builder.Entity<Project>().HasData(
-                new Project { Id = 1, Name = "Dockerized Product Management System with Authentication", Description = "" },
-                new Project { Id = 2, Name = "Dockerized Python Flask Rest Api - MongoDB", Description = "" },
-                new Project { Id = 3, Name = "Api Gateway - Lambda Functions Rest Api", Description = "" },
-                new Project { Id = 4, Name = "Dockerized Portfolio - .Net - Postgres", Description = "" }
+                new Project { Id = 1, Name = "Dockerized Product Management System with Authentication", Description = "", GithubUri = "https://github.com/MonkeyDDeveloper/dockerized-full-stack-application" },
+                new Project { Id = 2, Name = "Dockerized Python Flask Rest Api - MongoDB", Description = "", GithubUri = "https://github.com/MonkeyDDeveloper/dockerized-flask-api-mongodb" },
+                new Project { Id = 3, Name = "Api Gateway - Lambda Functions Rest Api", Description = "", GithubUri = "https://github.com/MonkeyDDeveloper/aws-lambda-apigateway-functions" },
+                new Project { Id = 4, Name = "Dockerized Portfolio - .Net - Postgres", Description = "", GithubUri = "https://github.com/MonkeyDDeveloper/workflows" }
             );
 
             builder.Entity<TechnologieProject>().HasData(
