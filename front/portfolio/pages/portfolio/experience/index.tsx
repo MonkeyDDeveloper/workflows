@@ -44,16 +44,15 @@ export default function Index() {
                 </span>
             </motion.p>
             <section className="mt-3">
-                {/* grid de una columna para pantallas pequeñas y responsive para pantallas más grandes */}
-                <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <section className="grid grid-cols-1">
                     {
                         experiences.map((experience, index) => {
                             return (
-                                <ExperienceCard key={index} experience={experience} />
+                                <ExperienceCard className="mb-4" key={index} experience={experience} />
                             )
                         })
                     }
-                </motion.div>
+                </section>
             </section>
         </section>
     )
