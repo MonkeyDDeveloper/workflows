@@ -19,7 +19,11 @@
         "title": "Experiencia",
         "description": "Estas son las empresas en las que he trabajado",
         "description2": "He aprendido mucho de ellas!",
-        "present": "Actualidad"
+        "present": "Actualidad",
+        "accordion": {
+            "responsibilities": "Responsabilidades",
+            "technologies": "Tecnologías"
+        }
     },
     "projects": {
         "title": "Proyectos"
