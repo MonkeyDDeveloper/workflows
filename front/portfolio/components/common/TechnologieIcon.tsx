@@ -36,6 +36,8 @@ export default function TechnologieIcon({ technologieAbbr, className = "" }: { t
         'liquidtemplate': <TbTemplate className={className} />,
         'namecheap': <SiNamecheap className={className} />,
         'mongoose': <SiMongoose className={className} />,
+        'pymongo': <SiMongodb className={className} />,
+        'github': <FaGithub className={className} />
     };
-    return abbrIcons[technologieAbbr] ? abbrIcons[technologieAbbr] : null
+    return abbrIcons[technologieAbbr] ? abbrIcons[technologieAbbr] : technologieAbbr
 }
