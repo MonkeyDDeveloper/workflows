@@ -48,7 +48,7 @@ export default function Index() {
                     {
                         experiences.map((experience, index) => {
                             return (
-                                <ExperienceCard className="mb-4" key={index} experience={experience} />
+                                <ExperienceCard className="mb-4 hover:cursor-pointer" key={index} experience={experience} />
                             )
                         })
                     }
