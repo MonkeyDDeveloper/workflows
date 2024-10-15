@@ -34,6 +34,8 @@ namespace PortfolioBackend.Controllers
                        .Include(pe => pe.Responsabilities)
                        .Include(te => te.TechnologieExperiences)
                        .ThenInclude(te => te.Technologie)
+                       .Include(pe => pe.CompanyExperience)
+                       .ThenInclude(ce => ce.Company)
                        .ToListAsync();
             }
             catch (Exception ex)

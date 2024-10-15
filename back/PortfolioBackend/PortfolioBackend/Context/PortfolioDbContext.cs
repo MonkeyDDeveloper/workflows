@@ -96,7 +96,8 @@ namespace PortfolioBackend.Context
                 .HasOne(tp => tp.Technologie);
 
             builder.Entity<ProfessionalExperience>()
-                .HasMany(pe => pe.CompanyExperiences);
+                .HasOne(pe => pe.CompanyExperience)
+                .WithOne(ce => ce.ProfessionalExperience);
 
             builder.Entity<CompanyExperience>()
                 .HasOne(ce => ce.ProfessionalExperience);
