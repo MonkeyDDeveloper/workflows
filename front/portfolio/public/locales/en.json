@@ -2,7 +2,8 @@
     "navigation": {
         "index": "Home",
         "experience": "Experience",
-        "projects": "Projects"
+        "projects": "Projects",
+        "watchMyCv": "My CV is minimalistic, come to see it!"
     },
     "index": {
         "title": "Javier",
@@ -26,6 +27,9 @@
         }
     },
     "projects": {
-        "title": "Projects"
+        "title": "Projects",
+        "description": "Latest personal projects",
+        "description2": "I have made a lot of personal projects, I like to know about everything so this is the way I can practice with different technologies, hope you find them interesting!",
+        "repositoryMessage": "You can find the code here!"
     }
 }
