@@ -30,7 +30,7 @@ export default function TechnologieIconList({ technologies }: { technologies: Te
                                     offset={15}
                                 >
                                     <section>
-                                        <TechnologieIcon className="w-14 h-14 text-cyan-600 hover:cursor-pointer hover:scale-[1.75] hover:rounded-sm hover:text-cyan-300 hover:drop-shadow-md hover:shadow-cyan-600" technologieAbbr={technologie.abbr} />
+                                        <TechnologieIcon className="w-14 h-14 text-cyan-900 dark:text-cyan-600 hover:cursor-pointer hover:scale-[1.75] hover:rounded-sm hover:text-orange-400 hover:dark:text-cyan-300 hover:drop-shadow-md hover:shadow-cyan-600" technologieAbbr={technologie.abbr} />
                                     </section>
                                 </Tooltip>
                             </motion.section>
