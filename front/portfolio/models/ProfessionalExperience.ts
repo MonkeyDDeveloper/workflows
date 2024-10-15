@@ -1,3 +1,4 @@
+import { CompanyExperience } from "./CompanyExperience";
 import { Responsabilitie } from "./Responsabilitie";
 import { TechnologieExperience } from "./TechnologieExperience";
 export interface ProfessionalExperience {
@@ -8,5 +9,6 @@ export interface ProfessionalExperience {
     endDate: string,
     isCurrent: boolean,
     responsabilities?: Responsabilitie[],
-    technologieExperiences?: TechnologieExperience[]
+    technologieExperiences?: TechnologieExperience[],
+    companyExperience?: CompanyExperience
 }
