@@ -6,4 +6,5 @@ export interface Project {
     description: string,
     projectTasks?: ProjectTask[]
     projectTechnologies?: TechnologieProject[]
+    githubUri: string
 }
