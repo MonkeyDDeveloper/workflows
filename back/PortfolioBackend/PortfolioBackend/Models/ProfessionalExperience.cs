@@ -26,5 +26,8 @@ namespace PortfolioBackend.Models
         [NotMapped]
         public ICollection<TechnologieExperience> TechnologieExperiences { get; set; } = null!;
 
+        [NotMapped]
+        public ICollection<CompanyExperience> CompanyExperiences { get; } = null!;
+
     }
 }

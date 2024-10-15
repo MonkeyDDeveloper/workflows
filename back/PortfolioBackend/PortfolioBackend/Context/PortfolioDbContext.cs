@@ -14,10 +14,13 @@ namespace PortfolioBackend.Context
         public DbSet<Responsabilitie> Responsabilities { get; set; }
         public DbSet<Technologie> Technologies { get; set; }
 
+        public DbSet<Company> Companies { get; set; }
+
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectTask> ProjectTasks { get; set; }
 
         public DbSet<TechnologieExperience> TechnologiesExperiences { get; set; }
+        public DbSet<CompanyExperience> CompanyExperiences { get; set; }
 
         public required string postgresConnectionString { get; set; }
 
@@ -66,6 +69,12 @@ namespace PortfolioBackend.Context
             builder.Entity<Project>()
                 .ToTable("projects");
 
+            builder.Entity<Company>()
+                .ToTable("companies");
+
+            builder.Entity<CompanyExperience>()
+                .ToTable("company_experiences");
+
             builder.Entity<ProjectTask>()
                 .ToTable("project_tasks");
 
@@ -85,6 +94,24 @@ namespace PortfolioBackend.Context
 
             builder.Entity<TechnologieProject>()
                 .HasOne(tp => tp.Technologie);
+
+            builder.Entity<ProfessionalExperience>()
+                .HasMany(pe => pe.CompanyExperiences);
+
+            builder.Entity<CompanyExperience>()
+                .HasOne(ce => ce.ProfessionalExperience);
+
+            builder.Entity<CompanyExperience>()
+                .HasOne(ce => ce.Company);
+
+            // Initial data for companies
+
+            builder.Entity<Company>().HasData(
+                new Company() { Id = 4, Name = "Dacodes", LogoPath = "/experience/dacodes_logo.webp" },
+                new Company() { Id = 2, Name = "Soluciones y Proyectos SA", LogoPath = "/experience/nomina360.png" },
+                new Company() { Id = 3, Name = "Cacao Web Studio", LogoPath = "/experience/cacao_logo.jpg" },
+                new Company() { Id = 1, Name = "MonkeyDDeveloper", LogoPath = "/experience/monkey_d_developer.png" }
+            );
 
             // Initial data for experiences
             builder.Entity<ProfessionalExperience>().HasData(
@@ -262,6 +289,13 @@ namespace PortfolioBackend.Context
                 new TechnologieExperience { Id = 35, TechnologieId = 37, ExperienceId = 1 }  // NameCheap - MonkeyDevelopment
             );
 
+            builder.Entity<CompanyExperience>().HasData(
+                new CompanyExperience() { Id = 1, CompanyId = 1, ExperienceId = 1 },    
+                new CompanyExperience() { Id = 2, CompanyId = 2, ExperienceId = 2 },    
+                new CompanyExperience() { Id = 3, CompanyId = 3, ExperienceId = 3 },    
+                new CompanyExperience() { Id = 4, CompanyId = 4, ExperienceId = 4 }
+            );
+
             // Initial data for projects
 
             builder.Entity<Project>().HasData(
@@ -299,6 +333,7 @@ namespace PortfolioBackend.Context
                 new TechnologieProject() { Id = 25, ProjectId = 4, TechnologieId =  12 },
                 new TechnologieProject() { Id = 26, ProjectId = 4, TechnologieId =  23 }
             );
+
         }
 
     }

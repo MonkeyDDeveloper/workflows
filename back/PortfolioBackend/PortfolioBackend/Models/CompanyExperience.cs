@@ -4,15 +4,15 @@ using System.Text.Json.Serialization;
 
 namespace PortfolioBackend.Models
 {
-    public class TechnologieExperience
+    public class CompanyExperience
     {
         [Key]
         [Column("id")]
         public int Id { get; set; }
 
-        [ForeignKey("Technologie")]
-        [Column("technologie_id")]
-        public int TechnologieId { get; set; }
+        [ForeignKey("Company")]
+        [Column("company_id")]
+        public int CompanyId { get; set; }
 
         [ForeignKey("ProfessionalExperience")]
         [Column("experience_id")]
@@ -24,6 +24,6 @@ namespace PortfolioBackend.Models
         public ProfessionalExperience ProfessionalExperience { get; set; } = null!;
 
         [NotMapped]
-        public Technologie Technologie { get; set; } = null!;
+        public Company Company { get; set; } = null!;
     }
 }

@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace PortfolioBackend.Models
 {
     public class TechnologieProject
     {
+        [Key]
+        [Column("id")]
         public int Id { get; set; }
 
         [ForeignKey("Technologie")]
