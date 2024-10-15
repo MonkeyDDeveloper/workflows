@@ -2,6 +2,8 @@ import { FaDocker, FaGit, FaGithub, FaAws, FaNodeJs, FaVuejs, FaBootstrap, FaDig
 import { SiPostgresql, SiMongodb, SiExpress, SiFlask, SiTailwindcss, SiNuxtdotjs, SiTypescript, SiJsonwebtokens, SiNextdotjs, SiQuasar, SiPug, SiNginx, SiShopify, SiZod, SiNamecheap, SiMongoose, SiGithubactions, SiDotnet, SiI18Next } from "react-icons/si";
 import { BsDatabaseFillGear } from "react-icons/bs";
 import { TbTemplate } from "react-icons/tb";
+import { MdEmail } from "react-icons/md";
+import { IoLogoJavascript } from "react-icons/io";
 
 export default function TechnologieIcon({ technologieAbbr, className = "" }: { technologieAbbr: string, className?: string }) {
     const abbrIcons = {
@@ -37,7 +39,11 @@ export default function TechnologieIcon({ technologieAbbr, className = "" }: { t
         'namecheap': <SiNamecheap className={className} />,
         'mongoose': <SiMongoose className={className} />,
         'pymongo': <SiMongodb className={className} />,
-        'github': <FaGithub className={className} />
+        'github': <FaGithub className={className} />,
+        'vuetify': <FaVuejs className={className} />,
+        'resend': <MdEmail className={className} />,
+        'javascript': <IoLogoJavascript />
+
     };
     return abbrIcons[technologieAbbr] ? abbrIcons[technologieAbbr] : technologieAbbr
 }
