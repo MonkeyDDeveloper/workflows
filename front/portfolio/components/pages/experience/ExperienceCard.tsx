@@ -2,7 +2,8 @@ import { ProfessionalExperience } from "@/models/ProfessionalExperience";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import TechnologieIcon from "./TechnologieIcon";
+import TechnologieIcon from "../../common/TechnologieIcon";
+import ExperienceCardAccordion from "./ExperienceCardAccordion"
 import { Tooltip } from "@nextui-org/react";
 
 export default function ExperienceCard({ experience, className = "" }: { experience: ProfessionalExperience, className?: string }) {
@@ -44,9 +45,11 @@ export default function ExperienceCard({ experience, className = "" }: { experie
                                                 placement="bottom"
                                                 offset={15}
                                             >
-                                                <section>
+                                                <motion.section
+                                                    whileHover={{ marginLeft: 5, marginRight: 5 }}
+                                                >
                                                     <TechnologieIcon className="hover:cursor-pointer hover:scale-[1.75] hover:bg-cyan-950 hover:rounded-sm hover:text-cyan-300 hover:drop-shadow-md hover:shadow-cyan-600" technologieAbbr={technologieAbbr[0]} />
-                                                </section>
+                                                </motion.section>
                                             </Tooltip>
                                         </motion.section>
                                     )
@@ -54,10 +57,10 @@ export default function ExperienceCard({ experience, className = "" }: { experie
                         }
                     </section>
                     <p className="mb-2 font-bold text-tiny">{experience.startDate} - {experience.isCurrent ? t("experience.present") : experience.endDate}</p>
-                    <small className="text-black dark:text-default-500">{experience.description}</small>
+                    <p className="text-sm text-black dark:text-default-500">{experience.description}</p>
                 </CardHeader>
                 <CardBody className="overflow-visible py-2">
-                    body here
+                    <ExperienceCardAccordion responsibilites={experience.responsabilities} />
                 </CardBody>
             </Card>
         </motion.div>
