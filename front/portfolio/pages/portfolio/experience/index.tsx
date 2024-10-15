@@ -10,14 +10,12 @@ export default function Index() {
 
     async function getExperiences() {
         const uri = `${process.env.NEXT_PUBLIC_BACK_API_URI}/professional-experiences`
-        console.log({ uri })
         const { message, data } = await portofioApi.get<ProfessionalExperience[]>(uri)
         if (!data) {
             console.error(`Error consultando las experiencias profesionales: ${message}`)
             return
         }
         const reversedData = data.reverse()
-        console.log({ data })
         setExperiences(reversedData)
     }
 
