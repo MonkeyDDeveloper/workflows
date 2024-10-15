@@ -11,5 +11,8 @@ namespace PortfolioBackend.Models
         [Column("name")]
         public required string Name { get; set; }
 
+        [Column("abbr")]
+        public required string Abbr {  get; set; }
+
     }
 }
