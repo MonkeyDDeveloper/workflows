@@ -28,14 +28,14 @@ export default function ProjectCard({ project, className = "" }: { project: Proj
                             {project.name}
                         </h4>
                         <p className="text-sm text-black dark:text-default-500">{project.description}</p>
-                        <p className="text-sm text-black dark:text-default-500">
-                            <a href={project.githubUri} target="_blank" className="hover:underline underline-offset-8 text-cyan-600">
-                                {t("projects.repositoryMessage")} <TechnologieIcon className="inline-block w-4 h-4" technologieAbbr="github" />
-                            </a>
-                        </p>
                     </CardHeader>
                     <CardBody className="overflow-visible py-2 mt-1">
                         <TechnologiesGrid technologies={project.projectTechnologies.map(projectTechnologie => projectTechnologie.technologie)} />
+                        <p className="mt-4 text-end text-sm text-black dark:text-default-500">
+                            <a href={project.githubUri} target="_blank" className="hover:underline underline-offset-8 dark:text-white font-minecraft">
+                                <TechnologieIcon className="inline-block w-6 h-6" technologieAbbr="github" /> {t("projects.repositoryMessage")}
+                            </a>
+                        </p>
                     </CardBody>
                 </motion.section>
             </Card>
