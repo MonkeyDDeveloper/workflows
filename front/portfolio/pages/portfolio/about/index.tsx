@@ -1,11 +1,14 @@
 import { useTranslations } from "next-intl";
-import WhatsApp from "@/components/icons/Whatsapp";
+import Head from "next/head";
 
 export default function About() {
     const t = useTranslations();
 
     return (
         <section className="w-11/12 mx-auto">
+            <Head>
+                <title>Javier Fray | {t("about.title")}</title>
+            </Head>
             <h1 className="mb-2 font-minecraft dark:text-cyan-600 text-xl">{t("about.title")}</h1>
 
             <h2 className="mb-2 font-minecraft dark:text-orange-600">{t("about.professionalTitle")}</h2>

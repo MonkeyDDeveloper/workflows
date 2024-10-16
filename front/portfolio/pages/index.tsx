@@ -6,6 +6,7 @@ import { Tooltip } from "@nextui-org/react";
 import WhatsApp from "@/components/icons/Whatsapp";
 import RightArrow from "@/components/icons/ArrowRight";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function Index() {
     const t = useTranslations()
@@ -19,6 +20,9 @@ export default function Index() {
 
     return (
         <section className="w-11/12 mx-auto">
+            <Head>
+                <title>Javier Fray</title>
+            </Head>
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
                 <p className="mb-4 text-center text-orange-600 dark:text-orange-400 font-minecraft text-4xl font-bold">{t('index.bigHi')}</p>
             </motion.section>

@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
 import ExperienceCard from "../../../components/pages/experience/ExperienceCard"
 import { useState } from "react"
+import Head from "next/head"
 
 export default function Index() {
 
@@ -28,6 +29,9 @@ export default function Index() {
 
     return (
         <section className="w-11/12 mx-auto">
+            <Head>
+                <title>Javier Fray | {t('experience.title')}</title>
+            </Head>
             <h1 className="font-minecraft text-3xl text-orange-600">
                 {t('experience.title')}!
             </h1>

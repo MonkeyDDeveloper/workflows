@@ -4,6 +4,7 @@ import { Project } from "../../../models/Project"
 import { useTranslations } from "next-intl"
 import { motion } from "framer-motion"
 import ProjectCard from "@/components/pages/projects/ProjectCard"
+import Head from "next/head"
 
 export default function Index() {
 
@@ -28,6 +29,9 @@ export default function Index() {
 
     return (
         <section className="w-11/12 mx-auto">
+            <Head>
+                <title>Javier Fray | {t('projects.title')}</title>
+            </Head>
             <h1 className="font-minecraft text-3xl text-orange-600">
                 {t('projects.title')}!
             </h1>
