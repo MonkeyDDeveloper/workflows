@@ -5,11 +5,18 @@ import { useState } from "react";
 import { Tooltip } from "@nextui-org/react";
 import WhatsApp from "@/components/icons/Whatsapp";
 import RightArrow from "@/components/icons/ArrowRight";
+import { useRouter } from "next/router";
 
 export default function Index() {
     const t = useTranslations()
     const [buttonColor, setButtonColor] = useState<"primary" | "danger" | "warning">("primary")
     const [buttonHovered, setButtonHovered] = useState(false)
+    const router = useRouter()
+
+    const navigateToExperience = () => {
+        router.push('/portfolio/experience')
+    }
+
     return (
         <section className="w-11/12 mx-auto">
             <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
@@ -76,7 +83,7 @@ export default function Index() {
                         setButtonColor("primary")
                     }}
                 >
-                    <Button className="max-w-full flex md:hidden" size="sm" color={buttonColor}>
+                    <Button onPress={navigateToExperience} className="max-w-full flex md:hidden" size="sm" color={buttonColor}>
                         <span className="font-minecraft">
                             {
                                 buttonHovered
@@ -86,7 +93,7 @@ export default function Index() {
                         </span>
                         <RightArrow className={buttonHovered ? 'text-black' : 'text-white'} />
                     </Button>
-                    <Button className="max-w-full hidden md:flex" size="lg" color={buttonColor}>
+                    <Button onPress={navigateToExperience} className="max-w-full hidden md:flex" size="lg" color={buttonColor}>
                         <span className="font-minecraft">
                             {
                                 buttonHovered
