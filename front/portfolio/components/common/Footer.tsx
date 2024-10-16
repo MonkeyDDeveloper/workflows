@@ -20,6 +20,7 @@ export default function Footer() {
                     <FaFileAlt className="mx-1 w-6 h-6" />
                 </a>
             </section>
+            <p className="text-sm text-center mt-3 font-minecraft">© 2024 Mayra ❤️</p>
         </div>
     )
 }
