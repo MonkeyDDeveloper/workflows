@@ -7,7 +7,7 @@ import LanguageSwitcher from "./LaguageSwitcher"
 import DarkModeToggle from "./DarkModeToggle"
 import WhatsApp from "../icons/Whatsapp"
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Tooltip } from "@nextui-org/react"
 
 
@@ -21,10 +21,16 @@ export default function Navigation() {
         { name: t("navigation.index"), path: `/` },
         { name: t("navigation.experience"), path: `/portfolio/experience` },
         { name: t("navigation.projects"), path: `/portfolio/projects` },
+        { name: t("navigation.about"), path: `/portfolio/about` },
     ]
 
+    useEffect(() => {
+        console.log({ pathname })
+        setIsMenuOpen(false)
+    }, [pathname])
+
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-transparent">
+        <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} className="bg-transparent">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
