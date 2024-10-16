@@ -3,6 +3,7 @@
         "index": "Inicio",
         "experience": "Experiencia",
         "projects": "Proyectos",
+        "about": "Acerca de mí",
         "watchMyCv": "Mi CV es minimalista, ven a verlo!"
     },
     "index": {
@@ -31,5 +32,17 @@
         "description": "Proyectos personales más recientes",
         "description2": "He hecho muchos proyectos personales, me gusta saber acerca de todo, así que esta es la manera en la que puedo practicar con diferentes tecnologías, espero que las encuentres interesantes!",
         "repositoryMessage": "Mira el código aquí!"
+    },
+    "about": {
+        "title": "Acerca de Mí",
+        "professionalTitle": "Profesionalmente",
+        "professionalDescription": "Soy un apasionado del aprendizaje continuo y la exploración de nuevas tecnologías, lo que se refleja en mis numerosos proyectos personales de práctica. Actualmente, trabajo como desarrollador frontend, donde aplico mis habilidades en la creación de interfaces atractivas y funcionales.",
+        "backendExperience": "He adquirido experiencia significativa en desarrollo backend, trabajando con Node.js, TypeScript, Mongoose y MongoDB, donde he podido desarrollar aplicaciones robustas y escalables. En mi última experiencia laboral, utilicé Docker de manera extensiva, lo que me permitió optimizar el desarrollo y la implementación de aplicaciones. Además, tengo conocimientos básicos de PostgreSQL, lo que me ha brindado una comprensión más amplia de las bases de datos relacionales.",
+        "interests": "Me interesa seguir profundizando en tecnologías como AWS, .NET y Python, mientras continúo especializándome en el desarrollo backend.",
+        "personalTitle": "Personalmente",
+        "personalDescription": "Como puedes ver, esta página es como un cuadrado, ¿no? Bueno, si lo estás viendo desde computadora 😅. Siempre me ha gustado el tema oscuro y lo retro, así que me gusta que mi portfolio tenga este tipo de estilos también. Te lo explico porque tal vez se te haya hecho extraño que la página se vea así... Continuemos.",
+        "hometown": "Vivo en un pequeño pueblito de Ecuador y, desde que entré a la universidad, he sido amante de la tecnología y la programación; ahí descubrí mi vocación y mi pasión. No hay muchas personas que se dediquen a este tipo de oficios en mi círculo social, así que me gusta pensar que soy diferente a los demás, que soy un rarito 😅.",
+        "values": "Me gusta estudiar y ser buena persona con los demás. Enseñar a los demás y tener un buen ambiente laboral es uno de mis objetivos en cada empresa en la que he trabajado.",
+        "contactMessage": "Espero que este sitio, y la información que te he dado acerca de mí, sea de tu agrado. ¡No dudes en contactarme!"
     }
 }

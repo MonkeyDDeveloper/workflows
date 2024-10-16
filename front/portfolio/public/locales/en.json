@@ -3,6 +3,7 @@
         "index": "Home",
         "experience": "Experience",
         "projects": "Projects",
+        "about": "About me",
         "watchMyCv": "My CV is minimalistic, come to see it!"
     },
     "index": {
@@ -31,5 +32,17 @@
         "description": "Latest personal projects",
         "description2": "I have made a lot of personal projects, I like to know about everything so this is the way I can practice with different technologies, hope you find them interesting!",
         "repositoryMessage": "You can find the code here!"
+    },
+    "about": {
+        "title": "About Me",
+        "professionalTitle": "Professionally",
+        "professionalDescription": "I am passionate about continuous learning and exploring new technologies, which is reflected in my numerous personal practice projects. Currently, I work as a frontend developer, where I apply my skills in creating attractive and functional interfaces.",
+        "backendExperience": "I have gained significant experience in backend development, working with Node.js, TypeScript, Mongoose, and MongoDB, where I have developed robust and scalable applications. In my last work experience, I extensively used Docker, which allowed me to optimize the development and deployment of applications. Additionally, I have basic knowledge of PostgreSQL, providing me with a broader understanding of relational databases.",
+        "interests": "I am interested in further deepening my knowledge of technologies such as AWS, .NET, and Python, while continuing to specialize in backend development.",
+        "personalTitle": "Personally",
+        "personalDescription": "As you can see, this page is like a square, right? Well, if you are viewing it from a computer 😅. I have always liked dark and retro themes, so I enjoy having this style in my portfolio as well. I explain this because it might seem strange that the page looks this way... Let's continue.",
+        "hometown": "I live in a small town in Ecuador, and since I entered university, I have been passionate about technology and programming; that’s when I discovered my vocation and passion. There aren’t many people in my social circle who dedicate themselves to this type of work, so I like to think I’m different from others, that I’m a bit of a weirdo 😅.",
+        "values": "I enjoy studying and being a good person to others. Teaching others and fostering a positive work environment is one of my goals in every company I have worked for.",
+        "contactMessage": "I hope you find this site and the information I have shared about myself interesting. Feel free to reach out!"
     }
 }
