@@ -13,7 +13,7 @@ export default function TechnologieIconList({ technologies }: { technologies: Te
                             <motion.section
                                 initial={{ x: -1, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1, rotate: 720 }}
-                                transition={{ delay: 1 + index / 2 }}
+                                transition={{ delay: 1 + index / 8 }}
                                 className="p-0.5"
                                 key={index}
                             >
@@ -30,7 +30,7 @@ export default function TechnologieIconList({ technologies }: { technologies: Te
                                     offset={15}
                                 >
                                     <section>
-                                        <TechnologieIcon className="w-14 h-14 text-cyan-900 dark:text-cyan-600 hover:cursor-pointer hover:scale-[1.75] hover:rounded-sm hover:text-orange-400 hover:dark:text-cyan-300 hover:drop-shadow-md hover:shadow-cyan-600" technologieAbbr={technologie.abbr} />
+                                        <TechnologieIcon className="w-14 h-14 text-slate-700 dark:text-cyan-600 hover:cursor-pointer hover:scale-[1.75] hover:rounded-sm hover:text-orange-400 hover:dark:text-cyan-300 hover:drop-shadow-md hover:shadow-cyan-600" technologieAbbr={technologie.abbr} />
                                     </section>
                                 </Tooltip>
                             </motion.section>
