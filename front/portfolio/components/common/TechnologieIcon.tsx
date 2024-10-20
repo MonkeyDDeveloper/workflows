@@ -1,5 +1,5 @@
 import { FaDocker, FaGit, FaGithub, FaAws, FaNodeJs, FaVuejs, FaBootstrap, FaDigitalOcean, FaPython } from "react-icons/fa";
-import { SiPostgresql, SiMongodb, SiExpress, SiFlask, SiTailwindcss, SiNuxtdotjs, SiTypescript, SiJsonwebtokens, SiNextdotjs, SiQuasar, SiPug, SiNginx, SiShopify, SiZod, SiNamecheap, SiMongoose, SiGithubactions, SiDotnet, SiI18Next } from "react-icons/si";
+import { SiPostgresql, SiMongodb, SiExpress, SiFlask, SiTailwindcss, SiNuxtdotjs, SiTypescript, SiJsonwebtokens, SiNextdotjs, SiQuasar, SiPug, SiNginx, SiShopify, SiZod, SiNamecheap, SiMongoose, SiGithubactions, SiDotnet, SiI18Next, SiRedis, SiSwagger, SiJest, SiAxios } from "react-icons/si";
 import { BsDatabaseFillGear } from "react-icons/bs";
 import { TbTemplate } from "react-icons/tb";
 import { MdEmail } from "react-icons/md";
@@ -42,7 +42,13 @@ export default function TechnologieIcon({ technologieAbbr, className = "" }: { t
         'github': <FaGithub className={className} />,
         'vuetify': <FaVuejs className={className} />,
         'resend': <MdEmail className={className} />,
-        'javascript': <IoLogoJavascript />
+        'javascript': <IoLogoJavascript />,
+        // add icons for Redis Swagger Jest Axios
+        'redis': <SiRedis className={className} />,
+        'swagger': <SiSwagger className={className} />,
+        'jest': <SiJest className={className} />,
+        'axios': <SiAxios className={className} />
+
 
     };
     return abbrIcons[technologieAbbr] ? abbrIcons[technologieAbbr] : technologieAbbr
