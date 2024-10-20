@@ -242,7 +242,11 @@ namespace PortfolioBackend.Context
                 new Technologie { Id = 47, Name = ".NET 8", Abbr = "DotNET" },
                 new Technologie { Id = 48, Name = "Entity Framework", Abbr = "entityframework" },
                 new Technologie { Id = 49, Name = "Digital Ocean Droplets", Abbr = "digitalocean" },
-                new Technologie { Id = 50, Name = "Github Actions", Abbr = "githubactions" }
+                new Technologie { Id = 50, Name = "Github Actions", Abbr = "githubactions" },
+                new Technologie { Id = 51, Name = "Redis", Abbr = "redis" },
+                new Technologie { Id = 52, Name = "Swagger", Abbr = "swagger" },
+                new Technologie { Id = 53, Name = "Jest", Abbr = "jest" },
+                new Technologie { Id = 54, Name = "Axios", Abbr = "axios" }
             );
 
             builder.Entity<TechnologieExperience>().HasData(
@@ -277,6 +281,8 @@ namespace PortfolioBackend.Context
                 new TechnologieExperience { Id = 24, TechnologieId = 26, ExperienceId = 2 }, // Quasar Framework 0.17 - Soluciones y Proyectos SA
                 new TechnologieExperience { Id = 25, TechnologieId = 27, ExperienceId = 2 }, // MongoDB 5.0 - Soluciones y Proyectos SA
                 new TechnologieExperience { Id = 26, TechnologieId = 28, ExperienceId = 2 }, // TypeScript 5.4 - Soluciones y Proyectos SA
+                new TechnologieExperience { Id = 36, TechnologieId = 53, ExperienceId = 2 }, // TypeScript 5.4 - Soluciones y Proyectos SA
+                new TechnologieExperience { Id = 37, TechnologieId = 52, ExperienceId = 2 }, // TypeScript 5.4 - Soluciones y Proyectos SA
 
                 // Tecnologías para MonkeyDevelopment
                 new TechnologieExperience { Id = 27, TechnologieId = 29, ExperienceId = 1 }, // JavaScript (Vanilla) - MonkeyDevelopment
@@ -300,10 +306,11 @@ namespace PortfolioBackend.Context
             // Initial data for projects
 
             builder.Entity<Project>().HasData(
-                new Project { Id = 1, Name = "Dockerized Product Management System with Authentication", Description = "", GithubUri = "https://github.com/MonkeyDDeveloper/dockerized-full-stack-application" },
-                new Project { Id = 2, Name = "Dockerized Python Flask Rest Api - MongoDB", Description = "", GithubUri = "https://github.com/MonkeyDDeveloper/dockerized-flask-api-mongodb" },
-                new Project { Id = 3, Name = "Api Gateway - Lambda Functions Rest Api", Description = "", GithubUri = "https://github.com/MonkeyDDeveloper/aws-lambda-apigateway-functions" },
-                new Project { Id = 4, Name = "Dockerized Portfolio - .Net - Postgres", Description = "", GithubUri = "https://github.com/MonkeyDDeveloper/workflows" }
+                new Project { Id = 1, Name = "Dockerized Product Management System with Authentication", Description = "Full stack application that uses JWT to auth. The front was built with Nuxtjs and the back with express, both of them usgin typescript. It is dockerized and uses a Mongo Database. ", GithubUri = "https://github.com/MonkeyDDeveloper/dockerized-full-stack-application" },
+                new Project { Id = 2, Name = "Dockerized Python Flask Rest Api - MongoDB", Description = "An example of rest api using Flask library and an ORM to connect and interact with a Mongo Database.", GithubUri = "https://github.com/MonkeyDDeveloper/dockerized-flask-api-mongodb" },
+                new Project { Id = 3, Name = "Api Gateway - Lambda Functions Rest Api", Description = "AWS Lambda funtions as microservices built with TypeScript to create a rest api.", GithubUri = "https://github.com/MonkeyDDeveloper/aws-lambda-apigateway-functions" },
+                new Project { Id = 4, Name = "Dockerized Portfolio - .Net - Postgres", Description = "The page you are watching, it was built using nextjs, typescript, .net and postgres as database. Also, it is deployed automatically using github actions in a digital ocean droplet.", GithubUri = "https://github.com/MonkeyDDeveloper/workflows" },
+                new Project { Id = 5, Name = "TypeScript Api", Description = "Dockerized TypeScript Api that uses Redis db to caching data. It implements Swagger Docs, and Jest for testing.", GithubUri = "https://github.com/MonkeyDDeveloper/api-ts-swagger" }
             );
 
             builder.Entity<TechnologieProject>().HasData(
@@ -332,7 +339,15 @@ namespace PortfolioBackend.Context
                 new TechnologieProject() { Id = 23, ProjectId = 4, TechnologieId =  50 },
                 new TechnologieProject() { Id = 24, ProjectId = 4, TechnologieId =  28 },
                 new TechnologieProject() { Id = 25, ProjectId = 4, TechnologieId =  12 },
-                new TechnologieProject() { Id = 26, ProjectId = 4, TechnologieId =  23 }
+                new TechnologieProject() { Id = 26, ProjectId = 4, TechnologieId =  23 },
+                new TechnologieProject() { Id = 27, ProjectId = 5, TechnologieId =  51 },
+                new TechnologieProject() { Id = 28, ProjectId = 5, TechnologieId =  52 },
+                new TechnologieProject() { Id = 29, ProjectId = 5, TechnologieId =  53 },
+                new TechnologieProject() { Id = 30, ProjectId = 5, TechnologieId =  54 },
+                new TechnologieProject() { Id = 31, ProjectId = 5, TechnologieId =  49 },
+                new TechnologieProject() { Id = 32, ProjectId = 5, TechnologieId =  23 },
+                new TechnologieProject() { Id = 33, ProjectId = 5, TechnologieId =  12 },
+                new TechnologieProject() { Id = 34, ProjectId = 5, TechnologieId =  9 }
             );
 
         }

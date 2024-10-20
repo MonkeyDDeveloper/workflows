@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PortfolioBackend.Context;
@@ -11,9 +12,11 @@ using PortfolioBackend.Context;
 namespace PortfolioBackend.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    partial class PortfolioDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241020172825_add_new_project")]
+    partial class add_new_project
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -231,35 +234,35 @@ namespace PortfolioBackend.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Full stack application that uses JWT to auth. The front was built with Nuxtjs and the back with express, both of them usgin typescript. It is dockerized and uses a Mongo Database. ",
+                            Description = "",
                             GithubUri = "https://github.com/MonkeyDDeveloper/dockerized-full-stack-application",
                             Name = "Dockerized Product Management System with Authentication"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "An example of rest api using Flask library and an ORM to connect and interact with a Mongo Database.",
+                            Description = "",
                             GithubUri = "https://github.com/MonkeyDDeveloper/dockerized-flask-api-mongodb",
                             Name = "Dockerized Python Flask Rest Api - MongoDB"
                         },
                         new
                         {
                             Id = 3,
-                            Description = "AWS Lambda funtions as microservices built with TypeScript to create a rest api.",
+                            Description = "",
                             GithubUri = "https://github.com/MonkeyDDeveloper/aws-lambda-apigateway-functions",
                             Name = "Api Gateway - Lambda Functions Rest Api"
                         },
                         new
                         {
                             Id = 4,
-                            Description = "The page you are watching, it was built using nextjs, typescript, .net and postgres as database. Also, it is deployed automatically using github actions in a digital ocean droplet.",
+                            Description = "",
                             GithubUri = "https://github.com/MonkeyDDeveloper/workflows",
                             Name = "Dockerized Portfolio - .Net - Postgres"
                         },
                         new
                         {
                             Id = 5,
-                            Description = "Dockerized TypeScript Api that uses Redis db to caching data. It implements Swagger Docs, and Jest for testing.",
+                            Description = "",
                             GithubUri = "https://github.com/MonkeyDDeveloper/api-ts-swagger",
                             Name = "TypeScript Api"
                         });
