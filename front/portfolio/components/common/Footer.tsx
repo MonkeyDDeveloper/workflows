@@ -22,7 +22,7 @@ export default function Footer() {
                     <FaFileAlt className="mx-1 w-6 h-6" />
                 </a>
             </section>
-            <p className="text-sm text-center mt-3 font-minecraft">© 2024 <span className="inline-block m-0 opacity-0 hover:opacity-100 hover:cursor-pointer">Mayra <motion.span className="inline-block m-0" whileInView={{ scale: [1, 1.1, 1], transition: { duration: 1.1, repeat: Infinity } }}>❤️</motion.span></span></p>
+            <p className="text-sm text-center mt-3 font-minecraft">© 2024 <span className="block text-center m-0 opacity-0 hover:opacity-100 hover:cursor-pointer">Mayra <motion.span className="inline-block m-0" whileInView={{ scale: [1, 1.2, 1], transition: { duration: 1.1, repeat: Infinity } }}>❤️</motion.span></span></p>
         </div>
     )
 }
