@@ -18,7 +18,7 @@ export default function Footer() {
                 <a href="https://www.linkedin.com/in/javier-fray/" target="_blank">
                     <BsLinkedin className="mx-1 w-6 h-6" />
                 </a>
-                <a href="https://bit.ly/javier-fray-resume" target="_blank">
+                <a href="https://bit.ly/resume-javier-fray" target="_blank">
                     <FaFileAlt className="mx-1 w-6 h-6" />
                 </a>
             </section>
