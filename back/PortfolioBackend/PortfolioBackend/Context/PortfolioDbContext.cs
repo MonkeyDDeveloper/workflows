@@ -310,7 +310,8 @@ namespace PortfolioBackend.Context
                 new Project { Id = 2, Name = "Dockerized Python Flask Rest Api - MongoDB", Description = "An example of rest api using Flask library and an ORM to connect and interact with a Mongo Database.", GithubUri = "https://github.com/MonkeyDDeveloper/dockerized-flask-api-mongodb" },
                 new Project { Id = 3, Name = "Api Gateway - Lambda Functions Rest Api", Description = "AWS Lambda funtions as microservices built with TypeScript to create a rest api.", GithubUri = "https://github.com/MonkeyDDeveloper/aws-lambda-apigateway-functions" },
                 new Project { Id = 4, Name = "Dockerized Portfolio - .Net - Postgres", Description = "The page you are watching, it was built using nextjs, typescript, .net and postgres as database. Also, it is deployed automatically using github actions in a digital ocean droplet.", GithubUri = "https://github.com/MonkeyDDeveloper/workflows" },
-                new Project { Id = 5, Name = "TypeScript Api", Description = "Dockerized TypeScript Api that uses Redis db to caching data. It implements Swagger Docs, and Jest for testing.", GithubUri = "https://github.com/MonkeyDDeveloper/api-ts-swagger" }
+                new Project { Id = 5, Name = "TypeScript Api", Description = "Dockerized TypeScript Api that uses Redis db to caching data. It implements Swagger Docs, and Jest for testing.", GithubUri = "https://github.com/MonkeyDDeveloper/api-ts-swagger" },
+                new Project { Id = 6, Name = "Python CLI CRUD with Postgres", Description = "CRUD with Python using Psycopg2, Docker, Postgres SQL Scripts, Bcrypt, PrettyTable and email-validator", GithubUri = "https://github.com/MonkeyDDeveloper/python_console_crud" }
             );
 
             builder.Entity<TechnologieProject>().HasData(
@@ -347,7 +348,11 @@ namespace PortfolioBackend.Context
                 new TechnologieProject() { Id = 31, ProjectId = 5, TechnologieId =  49 },
                 new TechnologieProject() { Id = 32, ProjectId = 5, TechnologieId =  23 },
                 new TechnologieProject() { Id = 33, ProjectId = 5, TechnologieId =  12 },
-                new TechnologieProject() { Id = 34, ProjectId = 5, TechnologieId =  9 }
+                new TechnologieProject() { Id = 34, ProjectId = 5, TechnologieId =  9 },
+                new TechnologieProject() { Id = 35, ProjectId = 6, TechnologieId =  46 },
+                new TechnologieProject() { Id = 36, ProjectId = 6, TechnologieId =  39 },
+                new TechnologieProject() { Id = 37, ProjectId = 6, TechnologieId =  23 },
+                new TechnologieProject() { Id = 38, ProjectId = 6, TechnologieId =  12 }
             );
 
         }
